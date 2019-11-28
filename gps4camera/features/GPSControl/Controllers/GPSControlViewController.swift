@@ -60,6 +60,7 @@ class GPSControlViewController: UIViewController {
         }
 
         ledExists.frame = CGRect(x: 0, y: 120, width: 150, height: 100)
+//        ledExists.transform = CGAffineTransform.init(scaleX: 0.5, y: 0.5)
         view.addSubview(ledExists)
 
         setupObservers()

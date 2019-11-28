@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="fontawesome.otf">
+        <array key="Font Awesome 5 Free-Regular-400.otf">
             <string>FontAwesome5Free-Regular</string>
         </array>
     </customFonts>
@@ -90,13 +90,8 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Xr-QP-dbe">
-                    <rect key="frame" x="44" y="143" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="GgI-rC-x5E" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="A3O-DL-GvT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="GgI-rC-x5E" secondAttribute="bottom" constant="58" id="ObQ-T8-Kx0"/>
