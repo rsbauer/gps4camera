@@ -1,0 +1,6 @@
+framework module Pods_gps4camera {
+  umbrella header "Pods-gps4camera-umbrella.h"
+
+  export *
+  module * { export * }
+}

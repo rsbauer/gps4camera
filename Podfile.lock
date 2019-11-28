@@ -1,0 +1,41 @@
+PODS:
+  - Bond (7.6.0):
+    - Differ (~> 1.3)
+    - ReactiveKit (~> 3.10)
+  - Differ (1.4.3)
+  - FontAwesome.swift (1.8.2)
+  - InAppSettingsKit (2.14)
+  - PluggableAppDelegate (1.3.0)
+  - ReactiveKit (3.14.0)
+  - Swinject (2.7.1)
+
+DEPENDENCIES:
+  - Bond
+  - FontAwesome.swift
+  - InAppSettingsKit
+  - PluggableAppDelegate
+  - ReactiveKit
+  - Swinject
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Bond
+    - Differ
+    - FontAwesome.swift
+    - InAppSettingsKit
+    - PluggableAppDelegate
+    - ReactiveKit
+    - Swinject
+
+SPEC CHECKSUMS:
+  Bond: 5d626bfbbfc60b213ec35badb8f4fd81beff6a5f
+  Differ: 6c7477d6187e8c36d02ec342a3c321061b85a0ea
+  FontAwesome.swift: 7938d6a03113ff3f39001bde7f50be8a0903d605
+  InAppSettingsKit: 800853da39388780c15191846688c0974c5b13b5
+  PluggableAppDelegate: 94c85bf821d85661c843a86e1aafe0cc12a62634
+  ReactiveKit: bee31957333d98c5b443609fe099ebccdf055d15
+  Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
+
+PODFILE CHECKSUM: 6681c0d4c16d6e75bf98e2d860f5147c3373198d
+
+COCOAPODS: 1.7.5

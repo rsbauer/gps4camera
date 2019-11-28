@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2"><Document><name> Location history from 2019-11-23 to 2019-11-23 </name><open>1</open>
+<description></description>
+<Placemark>
+	<name>Moving</name>
+	<address></address>
+	<ExtendedData>
+		<Data name="Category">
+			<value>Moving</value>
+		</Data>
+		<Data name="Distance">
+			<value>538</value>
+		</Data>
+	</ExtendedData>
+	<LineString>
+		<altitudeMode>clampToGround</altitudeMode>
+		<extrude>1</extrude>
+		<tesselate>1</tesselate>
+		<coordinates>-73.8142395,40.7140933,0 -73.8142437,40.7141033,0 -73.8142395,40.7140935,0 -73.8142436,40.7141034,0 -73.8142437,40.7141033,0
+		</coordinates>
+	</LineString>
+	<description> Moving from 2019-11-22T23:18:47.572Z to 2019-11-23T16:13:56.801Z. Distance 538m </description>	
+</Placemark>
+</Document>
+</kml>

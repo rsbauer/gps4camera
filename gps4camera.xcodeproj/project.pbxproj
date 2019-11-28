@@ -1,0 +1,1108 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5B403100BC3982912315417E /* Pods_gps4camera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB08968873AE12497C84A35 /* Pods_gps4camera.framework */; };
+		661700AC238F145800973DBA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661700AB238F145800973DBA /* SettingsViewController.swift */; };
+		661700AE238F152A00973DBA /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 661700AD238F152A00973DBA /* Settings.bundle */; };
+		661700B0238F527C00973DBA /* ShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661700AF238F527C00973DBA /* ShareManager.swift */; };
+		66543D32237B1B540028F27C /* fontawesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 66543D31237B1B540028F27C /* fontawesome.otf */; };
+		666185F12378DFFE00B63986 /* WindowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666185F02378DFFE00B63986 /* WindowService.swift */; };
+		66689D3D237A5AE20002837F /* GPSControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66689D3B237A5AE20002837F /* GPSControlViewController.swift */; };
+		66689D3E237A5AE20002837F /* GPSControlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66689D3C237A5AE20002837F /* GPSControlViewController.xib */; };
+		66689D42237A5D4E0002837F /* GPSStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66689D41237A5D4E0002837F /* GPSStateMachine.swift */; };
+		66689D45237A5D680002837F /* GPSInitializeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66689D44237A5D680002837F /* GPSInitializeState.swift */; };
+		66689D47237A5D7D0002837F /* GPSOnState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66689D46237A5D7D0002837F /* GPSOnState.swift */; };
+		66689D49237A5D870002837F /* GPSOffState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66689D48237A5D870002837F /* GPSOffState.swift */; };
+		666F74402389757B00D5ADE2 /* Segment7Standard.otf in Resources */ = {isa = PBXBuildFile; fileRef = 666F743F2389757A00D5ADE2 /* Segment7Standard.otf */; };
+		666F744723897D6500D5ADE2 /* LEDWidgetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666F744523897D6500D5ADE2 /* LEDWidgetCollectionViewCell.swift */; };
+		666F744823897D6500D5ADE2 /* LEDWidgetCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 666F744623897D6500D5ADE2 /* LEDWidgetCollectionViewCell.xib */; };
+		669E8FB5238984D6002FF27A /* XIBLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669E8FB4238984D6002FF27A /* XIBLoader.swift */; };
+		669E8FB7238AB07A002FF27A /* GPSControlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669E8FB6238AB07A002FF27A /* GPSControlViewModel.swift */; };
+		669E8FBA238AD56E002FF27A /* MessageBroker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669E8FB9238AD56E002FF27A /* MessageBroker.swift */; };
+		669E8FBD238ADC10002FF27A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669E8FBC238ADC10002FF27A /* LocationManager.swift */; };
+		669E8FC0238AE0E0002FF27A /* LocationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669E8FBF238AE0E0002FF27A /* LocationMessage.swift */; };
+		669E8FC5238B0A8D002FF27A /* FileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669E8FC4238B0A8D002FF27A /* FileRepository.swift */; };
+		669E8FC8238B0B64002FF27A /* KMLFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669E8FC7238B0B64002FF27A /* KMLFormat.swift */; };
+		669E8FCA238B0B9E002FF27A /* GPXFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669E8FC9238B0B9E002FF27A /* GPXFormat.swift */; };
+		669E8FD2238B2865002FF27A /* FilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669E8FD0238B2865002FF27A /* FilesViewController.swift */; };
+		669E8FD3238B2865002FF27A /* FilesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 669E8FD1238B2865002FF27A /* FilesViewController.xib */; };
+		669E8FD5238B51C1002FF27A /* FilesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669E8FD4238B51C1002FF27A /* FilesViewModel.swift */; };
+		669E8FE0238B723C002FF27A /* FileDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669E8FDE238B723C002FF27A /* FileDetailsViewController.swift */; };
+		669E8FE1238B723C002FF27A /* FileDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 669E8FDF238B723C002FF27A /* FileDetailsViewController.xib */; };
+		669E8FE3238B7300002FF27A /* FileDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669E8FE2238B7300002FF27A /* FileDetailsViewModel.swift */; };
+		669E8FE7238B8808002FF27A /* DataStoreProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669E8FE6238B8808002FF27A /* DataStoreProvider.swift */; };
+		669E8FEA238B88B3002FF27A /* Location.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 669E8FE8238B88B3002FF27A /* Location.xcdatamodeld */; };
+		669F411223742F5F001C9623 /* TimeSyncViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669F411023742F5F001C9623 /* TimeSyncViewController.swift */; };
+		669F411323742F5F001C9623 /* TimeSyncViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 669F411123742F5F001C9623 /* TimeSyncViewController.xib */; };
+		66F9B85A235BFEF7002297C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F9B859235BFEF7002297C6 /* AppDelegate.swift */; };
+		66F9B863235BFEF7002297C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66F9B862235BFEF7002297C6 /* Assets.xcassets */; };
+		66F9B866235BFEF7002297C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66F9B864235BFEF7002297C6 /* LaunchScreen.storyboard */; };
+		66F9B871235BFEF8002297C6 /* gps4cameraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F9B870235BFEF8002297C6 /* gps4cameraTests.swift */; };
+		66F9B87C235BFEF8002297C6 /* gps4cameraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F9B87B235BFEF8002297C6 /* gps4cameraUITests.swift */; };
+		66F9B88D235BFF3A002297C6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F9B88B235BFF3A002297C6 /* MainViewController.swift */; };
+		66F9B88E235BFF3A002297C6 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66F9B88C235BFF3A002297C6 /* MainViewController.xib */; };
+		D1A0061FAD4314FEBC0000B5 /* Pods_gps4cameraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D9568B407B0A43C4671E0C /* Pods_gps4cameraUITests.framework */; };
+		D8E17B3FFBB5A4F670EE4E63 /* Pods_gps4cameraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E4315B49D5E9028504ABC0 /* Pods_gps4cameraTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		66F9B86D235BFEF8002297C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66F9B84E235BFEF7002297C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 66F9B855235BFEF7002297C6;
+			remoteInfo = gps4camera;
+		};
+		66F9B878235BFEF8002297C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66F9B84E235BFEF7002297C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 66F9B855235BFEF7002297C6;
+			remoteInfo = gps4camera;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1AB08968873AE12497C84A35 /* Pods_gps4camera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gps4camera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62D9568B407B0A43C4671E0C /* Pods_gps4cameraUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gps4cameraUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		661700AB238F145800973DBA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		661700AD238F152A00973DBA /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		661700AF238F527C00973DBA /* ShareManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareManager.swift; sourceTree = "<group>"; };
+		66543D31237B1B540028F27C /* fontawesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fontawesome.otf; sourceTree = SOURCE_ROOT; };
+		666185F02378DFFE00B63986 /* WindowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowService.swift; sourceTree = "<group>"; };
+		66689D3B237A5AE20002837F /* GPSControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSControlViewController.swift; sourceTree = "<group>"; };
+		66689D3C237A5AE20002837F /* GPSControlViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GPSControlViewController.xib; sourceTree = "<group>"; };
+		66689D41237A5D4E0002837F /* GPSStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSStateMachine.swift; sourceTree = "<group>"; };
+		66689D44237A5D680002837F /* GPSInitializeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSInitializeState.swift; sourceTree = "<group>"; };
+		66689D46237A5D7D0002837F /* GPSOnState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSOnState.swift; sourceTree = "<group>"; };
+		66689D48237A5D870002837F /* GPSOffState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSOffState.swift; sourceTree = "<group>"; };
+		666F743F2389757A00D5ADE2 /* Segment7Standard.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Segment7Standard.otf; sourceTree = SOURCE_ROOT; };
+		666F744523897D6500D5ADE2 /* LEDWidgetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEDWidgetCollectionViewCell.swift; sourceTree = "<group>"; };
+		666F744623897D6500D5ADE2 /* LEDWidgetCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LEDWidgetCollectionViewCell.xib; sourceTree = "<group>"; };
+		669E8FB4238984D6002FF27A /* XIBLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XIBLoader.swift; sourceTree = "<group>"; };
+		669E8FB6238AB07A002FF27A /* GPSControlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSControlViewModel.swift; sourceTree = "<group>"; };
+		669E8FB9238AD56E002FF27A /* MessageBroker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBroker.swift; sourceTree = "<group>"; };
+		669E8FBC238ADC10002FF27A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		669E8FBF238AE0E0002FF27A /* LocationMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMessage.swift; sourceTree = "<group>"; };
+		669E8FC4238B0A8D002FF27A /* FileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileRepository.swift; sourceTree = "<group>"; };
+		669E8FC7238B0B64002FF27A /* KMLFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMLFormat.swift; sourceTree = "<group>"; };
+		669E8FC9238B0B9E002FF27A /* GPXFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPXFormat.swift; sourceTree = "<group>"; };
+		669E8FD0238B2865002FF27A /* FilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesViewController.swift; sourceTree = "<group>"; };
+		669E8FD1238B2865002FF27A /* FilesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilesViewController.xib; sourceTree = "<group>"; };
+		669E8FD4238B51C1002FF27A /* FilesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesViewModel.swift; sourceTree = "<group>"; };
+		669E8FDE238B723C002FF27A /* FileDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDetailsViewController.swift; sourceTree = "<group>"; };
+		669E8FDF238B723C002FF27A /* FileDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileDetailsViewController.xib; sourceTree = "<group>"; };
+		669E8FE2238B7300002FF27A /* FileDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDetailsViewModel.swift; sourceTree = "<group>"; };
+		669E8FE6238B8808002FF27A /* DataStoreProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStoreProvider.swift; sourceTree = "<group>"; };
+		669E8FE9238B88B3002FF27A /* Location.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Location.xcdatamodel; sourceTree = "<group>"; };
+		669F411023742F5F001C9623 /* TimeSyncViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSyncViewController.swift; sourceTree = "<group>"; };
+		669F411123742F5F001C9623 /* TimeSyncViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeSyncViewController.xib; sourceTree = "<group>"; };
+		66F9B856235BFEF7002297C6 /* gps4camera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gps4camera.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		66F9B859235BFEF7002297C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		66F9B862235BFEF7002297C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		66F9B865235BFEF7002297C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		66F9B867235BFEF7002297C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66F9B86C235BFEF8002297C6 /* gps4cameraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gps4cameraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		66F9B870235BFEF8002297C6 /* gps4cameraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gps4cameraTests.swift; sourceTree = "<group>"; };
+		66F9B872235BFEF8002297C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66F9B877235BFEF8002297C6 /* gps4cameraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gps4cameraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		66F9B87B235BFEF8002297C6 /* gps4cameraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gps4cameraUITests.swift; sourceTree = "<group>"; };
+		66F9B87D235BFEF8002297C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66F9B88B235BFF3A002297C6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		66F9B88C235BFF3A002297C6 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		8724F344BAC3F8293287540E /* Pods-gps4cameraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gps4cameraTests.debug.xcconfig"; path = "Target Support Files/Pods-gps4cameraTests/Pods-gps4cameraTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AC5E82AF7AC65B3B47087F80 /* Pods-gps4camera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gps4camera.release.xcconfig"; path = "Target Support Files/Pods-gps4camera/Pods-gps4camera.release.xcconfig"; sourceTree = "<group>"; };
+		ADCF66EC249A194C6D53981D /* Pods-gps4cameraUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gps4cameraUITests.release.xcconfig"; path = "Target Support Files/Pods-gps4cameraUITests/Pods-gps4cameraUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C35063D5B1B71E2864B56B79 /* Pods-gps4cameraTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gps4cameraTests.release.xcconfig"; path = "Target Support Files/Pods-gps4cameraTests/Pods-gps4cameraTests.release.xcconfig"; sourceTree = "<group>"; };
+		D65814FDA3C9425B91744007 /* Pods-gps4cameraUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gps4cameraUITests.debug.xcconfig"; path = "Target Support Files/Pods-gps4cameraUITests/Pods-gps4cameraUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DE41870DFE756BA102D52235 /* Pods-gps4camera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gps4camera.debug.xcconfig"; path = "Target Support Files/Pods-gps4camera/Pods-gps4camera.debug.xcconfig"; sourceTree = "<group>"; };
+		F6E4315B49D5E9028504ABC0 /* Pods_gps4cameraTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gps4cameraTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		66F9B853235BFEF7002297C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B403100BC3982912315417E /* Pods_gps4camera.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66F9B869235BFEF8002297C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8E17B3FFBB5A4F670EE4E63 /* Pods_gps4cameraTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66F9B874235BFEF8002297C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1A0061FAD4314FEBC0000B5 /* Pods_gps4cameraUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		661700A9238F143A00973DBA /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				661700AA238F144500973DBA /* Controllers */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		661700AA238F144500973DBA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				661700AB238F145800973DBA /* SettingsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		66543D30237B16560028F27C /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				66F9B862235BFEF7002297C6 /* Assets.xcassets */,
+				66F9B864235BFEF7002297C6 /* LaunchScreen.storyboard */,
+				66543D31237B1B540028F27C /* fontawesome.otf */,
+				666F743F2389757A00D5ADE2 /* Segment7Standard.otf */,
+				661700AD238F152A00973DBA /* Settings.bundle */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		666185EE2378DF5200B63986 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				666185EF2378DFD800B63986 /* Services */,
+				66F9B859235BFEF7002297C6 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		666185EF2378DFD800B63986 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				666185F02378DFFE00B63986 /* WindowService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		66689D3F237A5D2C0002837F /* StateMachines */ = {
+			isa = PBXGroup;
+			children = (
+				66689D40237A5D340002837F /* GPS */,
+			);
+			path = StateMachines;
+			sourceTree = "<group>";
+		};
+		66689D40237A5D340002837F /* GPS */ = {
+			isa = PBXGroup;
+			children = (
+				66689D43237A5D540002837F /* States */,
+				66689D41237A5D4E0002837F /* GPSStateMachine.swift */,
+			);
+			path = GPS;
+			sourceTree = "<group>";
+		};
+		66689D43237A5D540002837F /* States */ = {
+			isa = PBXGroup;
+			children = (
+				66689D44237A5D680002837F /* GPSInitializeState.swift */,
+				66689D46237A5D7D0002837F /* GPSOnState.swift */,
+				66689D48237A5D870002837F /* GPSOffState.swift */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
+		666F743B23896E7300D5ADE2 /* GPSControl */ = {
+			isa = PBXGroup;
+			children = (
+				666F743C23896E8B00D5ADE2 /* Controllers */,
+				666F743D23896E9800D5ADE2 /* Models */,
+				666F743E23896EAA00D5ADE2 /* Views */,
+			);
+			path = GPSControl;
+			sourceTree = "<group>";
+		};
+		666F743C23896E8B00D5ADE2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				66689D3B237A5AE20002837F /* GPSControlViewController.swift */,
+				66689D3C237A5AE20002837F /* GPSControlViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		666F743D23896E9800D5ADE2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				669E8FB6238AB07A002FF27A /* GPSControlViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		666F743E23896EAA00D5ADE2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				666F744523897D6500D5ADE2 /* LEDWidgetCollectionViewCell.swift */,
+				666F744623897D6500D5ADE2 /* LEDWidgetCollectionViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		669E8FB3238984C7002FF27A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				669E8FB4238984D6002FF27A /* XIBLoader.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		669E8FBB238ADBFE002FF27A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				669E8FBE238AE0CD002FF27A /* Messages */,
+				669E8FBC238ADC10002FF27A /* LocationManager.swift */,
+				669E8FB9238AD56E002FF27A /* MessageBroker.swift */,
+				661700AF238F527C00973DBA /* ShareManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		669E8FBE238AE0CD002FF27A /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				669E8FBF238AE0E0002FF27A /* LocationMessage.swift */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		669E8FC3238B0A81002FF27A /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				669E8FEB238B8CBC002FF27A /* Models */,
+				669E8FC6238B0B56002FF27A /* FileFormats */,
+				669E8FC4238B0A8D002FF27A /* FileRepository.swift */,
+				669E8FE6238B8808002FF27A /* DataStoreProvider.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		669E8FC6238B0B56002FF27A /* FileFormats */ = {
+			isa = PBXGroup;
+			children = (
+				669E8FC7238B0B64002FF27A /* KMLFormat.swift */,
+				669E8FC9238B0B9E002FF27A /* GPXFormat.swift */,
+			);
+			path = FileFormats;
+			sourceTree = "<group>";
+		};
+		669E8FCC238B27F5002FF27A /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				669E8FCD238B2820002FF27A /* Controllers */,
+				669E8FCF238B283E002FF27A /* Models */,
+				669E8FCE238B283A002FF27A /* Views */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
+		669E8FCD238B2820002FF27A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				669E8FD0238B2865002FF27A /* FilesViewController.swift */,
+				669E8FD1238B2865002FF27A /* FilesViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		669E8FCE238B283A002FF27A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		669E8FCF238B283E002FF27A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				669E8FD4238B51C1002FF27A /* FilesViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		669E8FD8238B71FA002FF27A /* FileDetails */ = {
+			isa = PBXGroup;
+			children = (
+				669E8FDB238B7210002FF27A /* Controllers */,
+				669E8FDA238B720C002FF27A /* Models */,
+				669E8FD9238B7203002FF27A /* Views */,
+			);
+			path = FileDetails;
+			sourceTree = "<group>";
+		};
+		669E8FD9238B7203002FF27A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		669E8FDA238B720C002FF27A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				669E8FE2238B7300002FF27A /* FileDetailsViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		669E8FDB238B7210002FF27A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				669E8FDE238B723C002FF27A /* FileDetailsViewController.swift */,
+				669E8FDF238B723C002FF27A /* FileDetailsViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		669E8FEB238B8CBC002FF27A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		66F9B84D235BFEF7002297C6 = {
+			isa = PBXGroup;
+			children = (
+				66F9B858235BFEF7002297C6 /* gps4camera */,
+				66F9B86F235BFEF8002297C6 /* gps4cameraTests */,
+				66F9B87A235BFEF8002297C6 /* gps4cameraUITests */,
+				66F9B857235BFEF7002297C6 /* Products */,
+				D067281FE0BB947F09B34233 /* Pods */,
+				DAE6896C32ABB034ADDDB4AC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		66F9B857235BFEF7002297C6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				66F9B856235BFEF7002297C6 /* gps4camera.app */,
+				66F9B86C235BFEF8002297C6 /* gps4cameraTests.xctest */,
+				66F9B877235BFEF8002297C6 /* gps4cameraUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		66F9B858235BFEF7002297C6 /* gps4camera */ = {
+			isa = PBXGroup;
+			children = (
+				669E8FC3238B0A81002FF27A /* Repositories */,
+				669E8FBB238ADBFE002FF27A /* Managers */,
+				669E8FB3238984C7002FF27A /* Utils */,
+				66543D30237B16560028F27C /* Assets */,
+				66689D3F237A5D2C0002837F /* StateMachines */,
+				666185EE2378DF5200B63986 /* App */,
+				66F9B889235BFF1C002297C6 /* features */,
+				66F9B867235BFEF7002297C6 /* Info.plist */,
+				669E8FE8238B88B3002FF27A /* Location.xcdatamodeld */,
+			);
+			path = gps4camera;
+			sourceTree = "<group>";
+		};
+		66F9B86F235BFEF8002297C6 /* gps4cameraTests */ = {
+			isa = PBXGroup;
+			children = (
+				66F9B870235BFEF8002297C6 /* gps4cameraTests.swift */,
+				66F9B872235BFEF8002297C6 /* Info.plist */,
+			);
+			path = gps4cameraTests;
+			sourceTree = "<group>";
+		};
+		66F9B87A235BFEF8002297C6 /* gps4cameraUITests */ = {
+			isa = PBXGroup;
+			children = (
+				66F9B87B235BFEF8002297C6 /* gps4cameraUITests.swift */,
+				66F9B87D235BFEF8002297C6 /* Info.plist */,
+			);
+			path = gps4cameraUITests;
+			sourceTree = "<group>";
+		};
+		66F9B889235BFF1C002297C6 /* features */ = {
+			isa = PBXGroup;
+			children = (
+				661700A9238F143A00973DBA /* Settings */,
+				669E8FD8238B71FA002FF27A /* FileDetails */,
+				669E8FCC238B27F5002FF27A /* Files */,
+				666F743B23896E7300D5ADE2 /* GPSControl */,
+				66F9B88A235BFF21002297C6 /* main */,
+			);
+			path = features;
+			sourceTree = "<group>";
+		};
+		66F9B88A235BFF21002297C6 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				66F9B891235BFF55002297C6 /* Views */,
+				66F9B890235BFF4E002297C6 /* Models */,
+				66F9B88F235BFF3F002297C6 /* Controllers */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		66F9B88F235BFF3F002297C6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				66F9B88B235BFF3A002297C6 /* MainViewController.swift */,
+				66F9B88C235BFF3A002297C6 /* MainViewController.xib */,
+				669F411023742F5F001C9623 /* TimeSyncViewController.swift */,
+				669F411123742F5F001C9623 /* TimeSyncViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		66F9B890235BFF4E002297C6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		66F9B891235BFF55002297C6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D067281FE0BB947F09B34233 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DE41870DFE756BA102D52235 /* Pods-gps4camera.debug.xcconfig */,
+				AC5E82AF7AC65B3B47087F80 /* Pods-gps4camera.release.xcconfig */,
+				8724F344BAC3F8293287540E /* Pods-gps4cameraTests.debug.xcconfig */,
+				C35063D5B1B71E2864B56B79 /* Pods-gps4cameraTests.release.xcconfig */,
+				D65814FDA3C9425B91744007 /* Pods-gps4cameraUITests.debug.xcconfig */,
+				ADCF66EC249A194C6D53981D /* Pods-gps4cameraUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DAE6896C32ABB034ADDDB4AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1AB08968873AE12497C84A35 /* Pods_gps4camera.framework */,
+				F6E4315B49D5E9028504ABC0 /* Pods_gps4cameraTests.framework */,
+				62D9568B407B0A43C4671E0C /* Pods_gps4cameraUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		66F9B855235BFEF7002297C6 /* gps4camera */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66F9B880235BFEF8002297C6 /* Build configuration list for PBXNativeTarget "gps4camera" */;
+			buildPhases = (
+				EB1D688EFD73A83C02CFE072 /* [CP] Check Pods Manifest.lock */,
+				66F9B852235BFEF7002297C6 /* Sources */,
+				66F9B853235BFEF7002297C6 /* Frameworks */,
+				66F9B854235BFEF7002297C6 /* Resources */,
+				7533760C2F018C1183380691 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = gps4camera;
+			productName = gps4camera;
+			productReference = 66F9B856235BFEF7002297C6 /* gps4camera.app */;
+			productType = "com.apple.product-type.application";
+		};
+		66F9B86B235BFEF8002297C6 /* gps4cameraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66F9B883235BFEF8002297C6 /* Build configuration list for PBXNativeTarget "gps4cameraTests" */;
+			buildPhases = (
+				F3E32239EB77B51EC869ADB9 /* [CP] Check Pods Manifest.lock */,
+				66F9B868235BFEF8002297C6 /* Sources */,
+				66F9B869235BFEF8002297C6 /* Frameworks */,
+				66F9B86A235BFEF8002297C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				66F9B86E235BFEF8002297C6 /* PBXTargetDependency */,
+			);
+			name = gps4cameraTests;
+			productName = gps4cameraTests;
+			productReference = 66F9B86C235BFEF8002297C6 /* gps4cameraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		66F9B876235BFEF8002297C6 /* gps4cameraUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66F9B886235BFEF8002297C6 /* Build configuration list for PBXNativeTarget "gps4cameraUITests" */;
+			buildPhases = (
+				14E1F03ABC5D8B4F2AD6A3EF /* [CP] Check Pods Manifest.lock */,
+				66F9B873235BFEF8002297C6 /* Sources */,
+				66F9B874235BFEF8002297C6 /* Frameworks */,
+				66F9B875235BFEF8002297C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				66F9B879235BFEF8002297C6 /* PBXTargetDependency */,
+			);
+			name = gps4cameraUITests;
+			productName = gps4cameraUITests;
+			productReference = 66F9B877235BFEF8002297C6 /* gps4cameraUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		66F9B84E235BFEF7002297C6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = RSB;
+				TargetAttributes = {
+					66F9B855235BFEF7002297C6 = {
+						CreatedOnToolsVersion = 11.1;
+					};
+					66F9B86B235BFEF8002297C6 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 66F9B855235BFEF7002297C6;
+					};
+					66F9B876235BFEF8002297C6 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 66F9B855235BFEF7002297C6;
+					};
+				};
+			};
+			buildConfigurationList = 66F9B851235BFEF7002297C6 /* Build configuration list for PBXProject "gps4camera" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 66F9B84D235BFEF7002297C6;
+			productRefGroup = 66F9B857235BFEF7002297C6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				66F9B855235BFEF7002297C6 /* gps4camera */,
+				66F9B86B235BFEF8002297C6 /* gps4cameraTests */,
+				66F9B876235BFEF8002297C6 /* gps4cameraUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		66F9B854235BFEF7002297C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				666F744823897D6500D5ADE2 /* LEDWidgetCollectionViewCell.xib in Resources */,
+				666F74402389757B00D5ADE2 /* Segment7Standard.otf in Resources */,
+				66543D32237B1B540028F27C /* fontawesome.otf in Resources */,
+				66F9B866235BFEF7002297C6 /* LaunchScreen.storyboard in Resources */,
+				66F9B88E235BFF3A002297C6 /* MainViewController.xib in Resources */,
+				669E8FD3238B2865002FF27A /* FilesViewController.xib in Resources */,
+				669F411323742F5F001C9623 /* TimeSyncViewController.xib in Resources */,
+				66689D3E237A5AE20002837F /* GPSControlViewController.xib in Resources */,
+				66F9B863235BFEF7002297C6 /* Assets.xcassets in Resources */,
+				661700AE238F152A00973DBA /* Settings.bundle in Resources */,
+				669E8FE1238B723C002FF27A /* FileDetailsViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66F9B86A235BFEF8002297C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66F9B875235BFEF8002297C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		14E1F03ABC5D8B4F2AD6A3EF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-gps4cameraUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7533760C2F018C1183380691 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-gps4camera/Pods-gps4camera-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-gps4camera/Pods-gps4camera-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-gps4camera/Pods-gps4camera-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB1D688EFD73A83C02CFE072 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-gps4camera-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3E32239EB77B51EC869ADB9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-gps4cameraTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		66F9B852235BFEF7002297C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				669F411223742F5F001C9623 /* TimeSyncViewController.swift in Sources */,
+				66689D49237A5D870002837F /* GPSOffState.swift in Sources */,
+				669E8FCA238B0B9E002FF27A /* GPXFormat.swift in Sources */,
+				669E8FC0238AE0E0002FF27A /* LocationMessage.swift in Sources */,
+				66F9B88D235BFF3A002297C6 /* MainViewController.swift in Sources */,
+				669E8FD5238B51C1002FF27A /* FilesViewModel.swift in Sources */,
+				669E8FB7238AB07A002FF27A /* GPSControlViewModel.swift in Sources */,
+				669E8FE3238B7300002FF27A /* FileDetailsViewModel.swift in Sources */,
+				661700AC238F145800973DBA /* SettingsViewController.swift in Sources */,
+				66F9B85A235BFEF7002297C6 /* AppDelegate.swift in Sources */,
+				669E8FBA238AD56E002FF27A /* MessageBroker.swift in Sources */,
+				661700B0238F527C00973DBA /* ShareManager.swift in Sources */,
+				66689D47237A5D7D0002837F /* GPSOnState.swift in Sources */,
+				66689D3D237A5AE20002837F /* GPSControlViewController.swift in Sources */,
+				669E8FC8238B0B64002FF27A /* KMLFormat.swift in Sources */,
+				669E8FB5238984D6002FF27A /* XIBLoader.swift in Sources */,
+				66689D42237A5D4E0002837F /* GPSStateMachine.swift in Sources */,
+				669E8FD2238B2865002FF27A /* FilesViewController.swift in Sources */,
+				669E8FBD238ADC10002FF27A /* LocationManager.swift in Sources */,
+				66689D45237A5D680002837F /* GPSInitializeState.swift in Sources */,
+				666F744723897D6500D5ADE2 /* LEDWidgetCollectionViewCell.swift in Sources */,
+				669E8FE7238B8808002FF27A /* DataStoreProvider.swift in Sources */,
+				666185F12378DFFE00B63986 /* WindowService.swift in Sources */,
+				669E8FC5238B0A8D002FF27A /* FileRepository.swift in Sources */,
+				669E8FEA238B88B3002FF27A /* Location.xcdatamodeld in Sources */,
+				669E8FE0238B723C002FF27A /* FileDetailsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66F9B868235BFEF8002297C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66F9B871235BFEF8002297C6 /* gps4cameraTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66F9B873235BFEF8002297C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66F9B87C235BFEF8002297C6 /* gps4cameraUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		66F9B86E235BFEF8002297C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 66F9B855235BFEF7002297C6 /* gps4camera */;
+			targetProxy = 66F9B86D235BFEF8002297C6 /* PBXContainerItemProxy */;
+		};
+		66F9B879235BFEF8002297C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 66F9B855235BFEF7002297C6 /* gps4camera */;
+			targetProxy = 66F9B878235BFEF8002297C6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		66F9B864235BFEF7002297C6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				66F9B865235BFEF7002297C6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		66F9B87E235BFEF8002297C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		66F9B87F235BFEF8002297C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		66F9B881235BFEF8002297C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE41870DFE756BA102D52235 /* Pods-gps4camera.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AAG9GT5WNC;
+				INFOPLIST_FILE = gps4camera/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rsbauer.gps4camera;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		66F9B882235BFEF8002297C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC5E82AF7AC65B3B47087F80 /* Pods-gps4camera.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AAG9GT5WNC;
+				INFOPLIST_FILE = gps4camera/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rsbauer.gps4camera;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		66F9B884235BFEF8002297C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8724F344BAC3F8293287540E /* Pods-gps4cameraTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AAG9GT5WNC;
+				INFOPLIST_FILE = gps4cameraTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rsbauer.gps4cameraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gps4camera.app/gps4camera";
+			};
+			name = Debug;
+		};
+		66F9B885235BFEF8002297C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C35063D5B1B71E2864B56B79 /* Pods-gps4cameraTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AAG9GT5WNC;
+				INFOPLIST_FILE = gps4cameraTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rsbauer.gps4cameraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gps4camera.app/gps4camera";
+			};
+			name = Release;
+		};
+		66F9B887235BFEF8002297C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D65814FDA3C9425B91744007 /* Pods-gps4cameraUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AAG9GT5WNC;
+				INFOPLIST_FILE = gps4cameraUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rsbauer.gps4cameraUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = gps4camera;
+			};
+			name = Debug;
+		};
+		66F9B888235BFEF8002297C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADCF66EC249A194C6D53981D /* Pods-gps4cameraUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AAG9GT5WNC;
+				INFOPLIST_FILE = gps4cameraUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rsbauer.gps4cameraUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = gps4camera;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		66F9B851235BFEF7002297C6 /* Build configuration list for PBXProject "gps4camera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66F9B87E235BFEF8002297C6 /* Debug */,
+				66F9B87F235BFEF8002297C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66F9B880235BFEF8002297C6 /* Build configuration list for PBXNativeTarget "gps4camera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66F9B881235BFEF8002297C6 /* Debug */,
+				66F9B882235BFEF8002297C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66F9B883235BFEF8002297C6 /* Build configuration list for PBXNativeTarget "gps4cameraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66F9B884235BFEF8002297C6 /* Debug */,
+				66F9B885235BFEF8002297C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66F9B886235BFEF8002297C6 /* Build configuration list for PBXNativeTarget "gps4cameraUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66F9B887235BFEF8002297C6 /* Debug */,
+				66F9B888235BFEF8002297C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		669E8FE8238B88B3002FF27A /* Location.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				669E8FE9238B88B3002FF27A /* Location.xcdatamodel */,
+			);
+			currentVersion = 669E8FE9238B88B3002FF27A /* Location.xcdatamodel */;
+			path = Location.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 66F9B84E235BFEF7002297C6 /* Project object */;
+}
