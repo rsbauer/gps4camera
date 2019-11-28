@@ -1,0 +1,11 @@
+.DS_Store
+build/
+xcuserdata
+gps4camera.xcodeproj/project.xcworkspace/xcshareddata/*
+builds
+buildOutput/
+fastlane/report.xml
+fastlane/test_output/
+fastlane/Appfile
+Fastlane/Deliverfile
+DerivedData
