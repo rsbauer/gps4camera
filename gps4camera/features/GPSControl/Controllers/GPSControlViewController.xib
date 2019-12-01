@@ -10,11 +10,26 @@
         <array key="Font Awesome 5 Free-Regular-400.otf">
             <string>FontAwesome5Free-Regular</string>
         </array>
+        <array key="Segment7Standard.otf">
+            <string>Segment7Standard</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GPSControlViewController" customModule="gps4camera" customModuleProvider="target">
             <connections>
+                <outlet property="accuracyTitle" destination="YYd-LP-nMt" id="ZWD-E0-xUN"/>
+                <outlet property="accuracyWidget" destination="cuy-5C-DRb" id="DqW-Ut-HwA"/>
+                <outlet property="altitudeWidget" destination="F60-M7-R7P" id="7LK-Nf-Sw0"/>
+                <outlet property="clockLabel" destination="qJC-Ah-4Am" id="s5b-Bq-evk"/>
+                <outlet property="distanceTitle" destination="AIg-Sx-NTC" id="Ltm-93-sex"/>
+                <outlet property="distanceWidget" destination="ruv-Hu-rtl" id="8uN-4x-gyW"/>
+                <outlet property="elapsedTimeLabel" destination="MXA-iE-Lpr" id="15J-64-xT3"/>
                 <outlet property="gpsToggleButton" destination="GgI-rC-x5E" id="m3E-z5-iq8"/>
+                <outlet property="headingTitle" destination="10m-vD-Uei" id="dGb-Xt-yZ1"/>
+                <outlet property="headingWidget" destination="c8E-JP-ueQ" id="rkm-8Y-v2J"/>
+                <outlet property="maxSpeedWidget" destination="1G6-Gr-PpV" id="aGR-nu-F2s"/>
+                <outlet property="speedUnitLabel" destination="8PU-K9-aZJ" id="dOT-G4-udy"/>
+                <outlet property="speedWidget" destination="Nae-u6-oeO" id="IqZ-cb-klV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -34,67 +49,191 @@
                         <action selector="gpsTogglePressed:" destination="-1" eventType="touchUpInside" id="m0C-Pb-K2M"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4D7-ES-bJS">
-                    <rect key="frame" x="182" y="624" width="48" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nae-u6-oeO" customClass="LEDWidget" customModule="gps4camera" customModuleProvider="target">
+                    <rect key="frame" x="164" y="44" width="231" height="102"/>
+                    <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="231" id="8ZM-HQ-UlA"/>
+                        <constraint firstAttribute="height" constant="102" id="ecI-Bg-O8b"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ruv-Hu-rtl" customClass="LEDWidget" customModule="gps4camera" customModuleProvider="target">
+                    <rect key="frame" x="224" y="167" width="171" height="67"/>
+                    <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="67" id="8q2-0p-S4Q"/>
+                        <constraint firstAttribute="width" constant="171" id="bQ5-Px-ZWd"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1G6-Gr-PpV" customClass="LEDWidget" customModule="gps4camera" customModuleProvider="target">
+                    <rect key="frame" x="224" y="256" width="171" height="67"/>
+                    <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="67" id="Yto-QT-LjW"/>
+                        <constraint firstAttribute="width" constant="171" id="tPY-LY-IJF"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mph" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8PU-K9-aZJ">
+                    <rect key="frame" x="164" y="130" width="231" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="Csb-8a-tvz"/>
+                        <constraint firstAttribute="width" constant="231" id="XA0-i8-ePH"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Max Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ec-UH-1Xc">
-                    <rect key="frame" x="298" y="773" width="86" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="distance" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AIg-Sx-NTC">
+                    <rect key="frame" x="223" y="224" width="172" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="tH2-Oz-Q1q"/>
+                        <constraint firstAttribute="width" constant="172" id="zpG-1g-CN9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DfX-4L-HE0">
-                    <rect key="frame" x="33" y="699" width="67" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="max speed" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqr-Ka-V3f">
+                    <rect key="frame" x="222" y="310" width="172" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="172" id="1d5-qf-04B"/>
+                        <constraint firstAttribute="height" constant="24" id="g3w-4Y-oee"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="compass" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGp-7I-N8z">
-                    <rect key="frame" x="298" y="699" width="69" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F60-M7-R7P" customClass="LEDWidget" customModule="gps4camera" customModuleProvider="target">
+                    <rect key="frame" x="224" y="342" width="171" height="35"/>
+                    <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="5s4-yn-QaE"/>
+                        <constraint firstAttribute="width" constant="171" id="iPd-Fz-5pT"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c8E-JP-ueQ" customClass="LEDWidget" customModule="gps4camera" customModuleProvider="target">
+                    <rect key="frame" x="224" y="397" width="171" height="35"/>
+                    <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="171" id="UPE-WB-e7H"/>
+                        <constraint firstAttribute="height" constant="35" id="X9x-S7-Ll9"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="heading" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10m-vD-Uei">
+                    <rect key="frame" x="223" y="420" width="172" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="172" id="J9Z-bk-vb2"/>
+                        <constraint firstAttribute="height" constant="24" id="wy4-dF-gcw"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="clock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jhf-dP-8P0">
-                    <rect key="frame" x="33" y="767" width="41" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuy-5C-DRb" customClass="LEDWidget" customModule="gps4camera" customModuleProvider="target">
+                    <rect key="frame" x="224" y="452" width="171" height="35"/>
+                    <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="171" id="TIy-zD-RWK"/>
+                        <constraint firstAttribute="height" constant="35" id="XdW-3d-MiM"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="accuracy" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYd-LP-nMt">
+                    <rect key="frame" x="223" y="474" width="172" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="nbs-nA-zB1"/>
+                        <constraint firstAttribute="width" constant="172" id="xSb-P3-FuM"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Altitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2e-o1-k8t">
-                    <rect key="frame" x="311" y="728" width="60" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="elapsed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqc-uu-MAM">
+                    <rect key="frame" x="20" y="199" width="134" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="134" id="6AR-a2-Ajv"/>
+                        <constraint firstAttribute="height" constant="24" id="sMa-1e-9bS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="accuracy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGn-qg-UJT">
-                    <rect key="frame" x="301" y="670" width="70" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88.88.88" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXA-iE-Lpr">
+                    <rect key="frame" x="20" y="167" width="134" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="134" id="rLT-br-sLz"/>
+                        <constraint firstAttribute="height" constant="38" id="xkI-3T-6t4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Segment7Standard" family="Segment7" pointSize="38"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJP-Cg-Eme">
-                    <rect key="frame" x="34" y="728" width="38" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="clock" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRh-g8-mx3">
+                    <rect key="frame" x="20" y="288" width="134" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="4Qc-xb-0WO"/>
+                        <constraint firstAttribute="width" constant="134" id="uC2-7J-3xc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88.88.88" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJC-Ah-4Am">
+                    <rect key="frame" x="20" y="256" width="134" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="134" id="BQq-fJ-3V5"/>
+                        <constraint firstAttribute="height" constant="38" id="IHs-yu-f7D"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Segment7Standard" family="Segment7" pointSize="38"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="altitude" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUd-kE-Rim">
+                    <rect key="frame" x="222" y="367" width="172" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="172" id="Kdh-Mc-7hs"/>
+                        <constraint firstAttribute="height" constant="24" id="k17-8t-R07"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="1G6-Gr-PpV" firstAttribute="top" secondItem="AIg-Sx-NTC" secondAttribute="bottom" constant="8" id="0MH-so-doZ"/>
+                <constraint firstItem="OUd-kE-Rim" firstAttribute="top" secondItem="qqr-Ka-V3f" secondAttribute="bottom" constant="33" id="0Un-SE-AcK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="F60-M7-R7P" secondAttribute="trailing" constant="19" id="4CN-Yl-IHN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AIg-Sx-NTC" secondAttribute="trailing" constant="19" id="4Ga-lB-Ouw"/>
                 <constraint firstItem="GgI-rC-x5E" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="A3O-DL-GvT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ruv-Hu-rtl" secondAttribute="trailing" constant="19" id="AAI-Gg-fQu"/>
+                <constraint firstItem="c8E-JP-ueQ" firstAttribute="top" secondItem="F60-M7-R7P" secondAttribute="bottom" constant="20" id="AUC-D5-gfq"/>
+                <constraint firstItem="qqr-Ka-V3f" firstAttribute="top" secondItem="AIg-Sx-NTC" secondAttribute="bottom" constant="62" id="AzD-uU-sIz"/>
+                <constraint firstItem="cuy-5C-DRb" firstAttribute="top" secondItem="c8E-JP-ueQ" secondAttribute="bottom" constant="20" id="Bbq-RT-eay"/>
+                <constraint firstItem="cuy-5C-DRb" firstAttribute="top" secondItem="10m-vD-Uei" secondAttribute="bottom" constant="8" id="D9B-FN-ZTR"/>
+                <constraint firstItem="bqc-uu-MAM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="155" id="GdK-XC-M07"/>
+                <constraint firstItem="MXA-iE-Lpr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="123" id="Gq3-rh-vfc"/>
+                <constraint firstItem="Nae-u6-oeO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Gtz-ku-jdm"/>
+                <constraint firstItem="bqc-uu-MAM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="HYO-Xq-pNX"/>
+                <constraint firstItem="F60-M7-R7P" firstAttribute="top" secondItem="qqr-Ka-V3f" secondAttribute="bottom" constant="8" id="Hje-QL-xht"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="c8E-JP-ueQ" secondAttribute="trailing" constant="19" id="Inb-7T-JPy"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YYd-LP-nMt" secondAttribute="trailing" constant="19" id="K0r-Pr-qGa"/>
+                <constraint firstItem="qJC-Ah-4Am" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="OH9-r2-rnh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="GgI-rC-x5E" secondAttribute="bottom" constant="58" id="ObQ-T8-Kx0"/>
+                <constraint firstItem="AIg-Sx-NTC" firstAttribute="top" secondItem="8PU-K9-aZJ" secondAttribute="bottom" constant="73" id="PcV-AH-lbt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8PU-K9-aZJ" secondAttribute="trailing" constant="19" id="Rf3-xK-olx"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1G6-Gr-PpV" secondAttribute="trailing" constant="19" id="RvR-Id-dua"/>
+                <constraint firstItem="8PU-K9-aZJ" firstAttribute="top" secondItem="Nae-u6-oeO" secondAttribute="bottom" constant="-16" id="SHD-QK-L3S"/>
+                <constraint firstItem="YYd-LP-nMt" firstAttribute="top" secondItem="10m-vD-Uei" secondAttribute="bottom" constant="30" id="TEg-3A-OH0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="10m-vD-Uei" secondAttribute="trailing" constant="19" id="Vau-CN-DKb"/>
+                <constraint firstItem="tRh-g8-mx3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="YrO-kO-tVk"/>
+                <constraint firstItem="MXA-iE-Lpr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="deL-X8-hHe"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cuy-5C-DRb" secondAttribute="trailing" constant="19" id="gqu-Aa-ol1"/>
+                <constraint firstItem="tRh-g8-mx3" firstAttribute="top" secondItem="bqc-uu-MAM" secondAttribute="bottom" constant="65" id="hsW-7f-q93"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qqr-Ka-V3f" secondAttribute="trailing" constant="20" id="jEs-q9-dXo"/>
+                <constraint firstItem="ruv-Hu-rtl" firstAttribute="top" secondItem="8PU-K9-aZJ" secondAttribute="bottom" constant="16" id="khn-D1-DNG"/>
+                <constraint firstItem="qJC-Ah-4Am" firstAttribute="top" secondItem="bqc-uu-MAM" secondAttribute="bottom" constant="33" id="rDk-Ib-9af"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Nae-u6-oeO" secondAttribute="trailing" constant="19" id="ted-bl-5ZZ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OUd-kE-Rim" secondAttribute="trailing" constant="20" id="zqv-H4-bsN"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="139.95535714285714"/>

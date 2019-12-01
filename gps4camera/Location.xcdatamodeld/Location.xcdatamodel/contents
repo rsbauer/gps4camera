@@ -12,13 +12,15 @@
         <relationship name="track" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Track" inverseName="pois" inverseEntity="Track"/>
     </entity>
     <entity name="Track" representedClassName="Track" syncable="YES" codeGenerationType="class">
+        <attribute name="distance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="end" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="maxSpeed" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="start" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="pois" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="POI" inverseName="track" inverseEntity="POI"/>
     </entity>
     <elements>
         <element name="POI" positionX="-45" positionY="27" width="128" height="178"/>
-        <element name="Track" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="Track" positionX="-63" positionY="-18" width="128" height="133"/>
     </elements>
 </model>

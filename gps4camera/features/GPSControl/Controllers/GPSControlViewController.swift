@@ -15,11 +15,23 @@ import UIKit
 class GPSControlViewController: UIViewController {
 
     @IBOutlet weak var gpsToggleButton: UIButton!
+    @IBOutlet weak var speedWidget: LEDWidget!
+    @IBOutlet weak var speedUnitLabel: UILabel!
+
+    @IBOutlet weak var distanceWidget: LEDWidget!
+    @IBOutlet weak var distanceTitle: UILabel!
+    @IBOutlet weak var maxSpeedWidget: LEDWidget!
+    @IBOutlet weak var altitudeWidget: LEDWidget!
+    @IBOutlet weak var headingWidget: LEDWidget!
+    @IBOutlet weak var headingTitle: UILabel!
+    @IBOutlet weak var accuracyWidget: LEDWidget!
+    @IBOutlet weak var accuracyTitle: UILabel!
+    @IBOutlet weak var elapsedTimeLabel: UILabel!
+    @IBOutlet weak var clockLabel: UILabel!
     
     private var viewModel: GPSControlViewModel
     private var disposeBag: DisposeBag = DisposeBag()
     private weak var container: Container?
-    private var led: LEDWidgetCollectionViewCell?
     private var lastSpeed: Double = 0
 
     public init(container: Container) {
@@ -52,17 +64,8 @@ class GPSControlViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "GPS"
-
-        led = LEDWidgetCollectionViewCell.loadFromNib(ofType: LEDWidgetCollectionViewCell.self)
-        guard let ledExists = led else {
-            return
-        }
-
-        ledExists.frame = CGRect(x: 0, y: 120, width: 150, height: 100)
-//        ledExists.transform = CGAffineTransform.init(scaleX: 0.5, y: 0.5)
-        view.addSubview(ledExists)
-
+        view.backgroundColor = UIColor(hexString: "96ad9d")
+        
         setupObservers()
 
         viewModel.initializeGPS()
@@ -70,7 +73,7 @@ class GPSControlViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        led?.setValue(lastSpeed, units: getSpeedUnit())
+        speedWidget?.setValue(lastSpeed)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -100,10 +103,116 @@ class GPSControlViewController: UIViewController {
             }
 
             strongSelf.lastSpeed = speed
-            strongSelf.led?.setValue(speed, units: strongSelf.getSpeedUnit())
+            strongSelf.speedWidget?.setValue(speed)
+//            strongSelf.speedUnitLabel.text = strongSelf.getSpeedUnit()
+        }.dispose(in: disposeBag)
+        
+        viewModel.distanceForDisplay.observeNext { [weak self] (distance) in
+            guard let strongSelf = self else {
+                return
+            }
+            
+//            let speedUnits = strongSelf.getSpeedUnit()
+//            var distanceUnit = "km"
+//            if speedUnits == "mph" {
+//                distanceUnit = "miles"
+//            }
+            
+            strongSelf.distanceWidget.setValue(distance)
+//            strongSelf.distanceTitle.text =  "distance - \(distanceUnit)"
+        }.dispose(in: disposeBag)
+        
+        viewModel.maxSpeed.observeNext { [weak self] (speed) in
+            guard let strongSelf = self else {
+                return
+            }
+            
+            strongSelf.maxSpeedWidget.setValue(speed)
+        }.dispose(in: disposeBag)
+        
+        viewModel.altitudeForDisplay.observeNext { [weak self] (altitude) in
+            guard let strongSelf = self else {
+                return
+            }
+            
+            strongSelf.altitudeWidget.setValue(altitude)
+        }.dispose(in: disposeBag)
+        
+        viewModel.heading.observeNext { [weak self] (heading) in
+            guard let strongSelf = self else {
+                return
+            }
+            
+            strongSelf.headingWidget.setValue(heading)
+        }.dispose(in: disposeBag)
+        
+        viewModel.headingTitle.observeNext { [weak self] (title) in
+            guard let strongSelf = self else {
+                return
+            }
+            
+            strongSelf.headingTitle.text = title
+        }.dispose(in: disposeBag)
+        
+        viewModel.accuracyForDisplay.observeNext { [weak self] (accuracy) in
+            guard let strongSelf = self else {
+                return
+            }
+            
+//            let speedUnits = strongSelf.getSpeedUnit()
+//            var distanceUnit = "m"
+//            if speedUnits == "mph" {
+//                distanceUnit = "ft"
+//            }
+
+            strongSelf.accuracyWidget.setValue(accuracy)
+//            strongSelf.accuracyTitle.text = "accuracy - \(distanceUnit)"
+        }.dispose(in: disposeBag)
+        
+        viewModel.clock.observeNext { [weak self] (clock) in
+            guard let strongSelf = self else {
+                return
+            }
+
+            strongSelf.clockLabel.text = clock
+        }.dispose(in: disposeBag)
+        
+        viewModel.elapsedTime.observeNext { [weak self] (elapsed) in
+            guard let strongSelf = self else {
+                return
+            }
+            
+            strongSelf.elapsedTimeLabel.text = elapsed
+        }.dispose(in: disposeBag)
+        
+        
+        
+//            userDefaults.reactive
+//            .keyPath(LocationManager.HomeLocationKey, ofType: Optional<String>.self, context: .immediateOnMain)
+//            ...
+        
+        
+        UserDefaults.standard.reactive.keyPath("speed_units", ofType: Optional<String>.self, context: .immediateOnMain).observeNext { [weak self] (newValue) in
+            guard let strongSelf = self, let newValueExists = newValue else {
+                return
+            }
+            
+            strongSelf.viewModel.setSpeedUnit(unit: newValueExists)
+            strongSelf.speedUnitLabel.text = newValueExists
+
+            var distanceUnit = "km"
+            var distanceUnitSmall = "m"
+            if newValueExists == "mph" {
+                distanceUnit = "miles"
+                distanceUnitSmall = "ft"
+            }
+            
+            strongSelf.distanceTitle.text =  "distance - \(distanceUnit)"
+            strongSelf.accuracyTitle.text = "accuracy - \(distanceUnitSmall)"
         }.dispose(in: disposeBag)
     }
     
+    /*
     private func getSpeedUnit() -> String {
         if let speedUnits = UserDefaults.standard.value(forKey: "speed_units") as? String {
             return speedUnits
@@ -111,4 +220,5 @@ class GPSControlViewController: UIViewController {
         
         return "mph"
     }
+     */
 }

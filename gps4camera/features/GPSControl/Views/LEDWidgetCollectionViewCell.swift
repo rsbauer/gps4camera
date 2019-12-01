@@ -20,12 +20,15 @@ class LEDWidgetCollectionViewCell: UICollectionViewCell, NibLoadable {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        majorValueLabel.adjustsFontSizeToFitWidth = true
+        majorValueDimmedLabel.adjustsFontSizeToFitWidth = true
     }
     
     public func setValue(_ value: Double, units: String) {
         let rounded = round(value * 10) / 10
         let valueStr = "\(rounded)"
         let parts = valueStr.components(separatedBy: ".")
+        
         majorValueLabel.text = parts[0]
         minorValueLabel.text = ".\(parts[1])"
         unitLabel.text = units

@@ -46,6 +46,62 @@
 				<string>Celsius</string>
 			</array>
 		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Clock</string>
+			<key>Key</key>
+			<string>clock_format</string>
+			<key>DefaultValue</key>
+			<string>12</string>
+			<key>Titles</key>
+			<array>
+				<string>12 hour</string>
+				<string>24 hour</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>12</string>
+				<string>24</string>
+			</array>
+		</dict>
+        
+        <dict>
+            <key>Type</key>
+            <string>PSGroupSpecifier</string>
+            <key>Title</key>
+            <string>Information</string>
+        </dict>
+
+		<dict>
+			<key>File</key>
+			<string>settings_howto.html</string>
+			<key>IASKViewControllerClass</key>
+			<string>IASKAppSettingsWebViewController</string>
+			<key>IASKViewControllerSelector</key>
+			<string>initWithFile:specifier:</string>
+			<key>Title</key>
+			<string>How to</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>IASKChildTitle</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>settings_about.html</string>
+			<key>IASKViewControllerClass</key>
+			<string>IASKAppSettingsWebViewController</string>
+			<key>IASKViewControllerSelector</key>
+			<string>initWithFile:specifier:</string>
+			<key>Title</key>
+			<string>About</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>IASKChildTitle</key>
+			<string></string>
+		</dict>
 	</array>
 </dict>
 </plist>
