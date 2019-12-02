@@ -66,12 +66,14 @@ public class GPSControlViewModel {
     private(set) var accuracyInMeters = Observable<Double>(0)
     private(set) var elapsedTime = Observable("00.00.00")
     private(set) var clock = Observable("")
+    private(set) var temperatureForDisplay = Observable<Double>(0)
+    private var temperature = Observable<Double>(0)
     
     private var locationManager: LocationManagerType?
     private var dataStore: DataStoreProviderType?
     private var stateMachine: GPSStateMachine
     private var disposeBag: DisposeBag = DisposeBag()
-    private var speedUnit: String = "mph"
+    private var speedUnit: String = Constants.imperialRate
     private var previousLocation: CLLocation?
     private var clockTimer: Timer?
     private var startTime: Date = Date()
@@ -79,9 +81,11 @@ public class GPSControlViewModel {
 
     public enum Constants {
         static let filenameDateFormat = "MM-dd-YYY hh:mma"
-        static let clockDateFormat = "HH.mm.ss"
+        static let clockDate24Format = "HH.mm.ss"
+        static let clockDate12Format = "hh.mm.ss"
+        static let imperialRate = "mph"
     }
-
+    
     init(manager: LocationManagerType?, dataStore: DataStoreProviderType?) {
         locationManager = manager
         self.dataStore = dataStore
@@ -99,15 +103,15 @@ public class GPSControlViewModel {
         
         MessageBroker.sharedMessageBroker.subscribe(self, messageKey: LocationMessage.locationType)
 
-        clockDateFormatter.dateFormat = "hh.mm.ss"
+        clockDateFormatter.dateFormat = Constants.clockDate12Format
         UserDefaults.standard.reactive.keyPath("clock_format", ofType: Optional<String>.self, context: .immediateOnMain).observeNext { [weak self] (clockFormat) in
             guard let strongSelf = self, let formatExists = clockFormat else {
                 return
             }
             
-            var format = "hh.mm.ss"
+            var format = Constants.clockDate12Format
             if formatExists == "24"  {
-                format = "HH.mm.ss"
+                format = Constants.clockDate24Format
             }
             
             strongSelf.clockDateFormatter.dateFormat = format
@@ -144,7 +148,7 @@ public class GPSControlViewModel {
             
             let distanceMeters = Measurement(value: meters, unit: UnitLength.meters)
             var newValue: Measurement<UnitLength> = Measurement<UnitLength>.init(value: 0, unit: UnitLength.kilometers)
-            if strongSelf.speedUnit == "mph" {
+            if strongSelf.speedUnit == Constants.imperialRate {
                 newValue =  distanceMeters.converted(to: UnitLength.miles)
             }
             else {
@@ -170,7 +174,7 @@ public class GPSControlViewModel {
 
             let distanceMeters = Measurement(value: altitude, unit: UnitLength.meters)
             var newValue: Measurement<UnitLength> = Measurement<UnitLength>.init(value: 0, unit: UnitLength.kilometers)
-            if strongSelf.speedUnit == "mph" {
+            if strongSelf.speedUnit == Constants.imperialRate {
                 newValue =  distanceMeters.converted(to: UnitLength.feet)
             }
             else {
@@ -196,7 +200,7 @@ public class GPSControlViewModel {
             
             let distanceMeters = Measurement(value: accuracy, unit: UnitLength.meters)
             var newValue: Measurement<UnitLength> = Measurement<UnitLength>.init(value: 0, unit: UnitLength.kilometers)
-            if strongSelf.speedUnit == "mph" {
+            if strongSelf.speedUnit == Constants.imperialRate {
                 newValue =  distanceMeters.converted(to: UnitLength.feet)
             }
             else {
@@ -271,7 +275,7 @@ public class GPSControlViewModel {
         
         let metersPerSecond = Measurement(value: location.speed, unit: UnitSpeed.metersPerSecond)
         var newSpeed: Measurement<UnitSpeed> = Measurement<UnitSpeed>.init(value: 0, unit: UnitSpeed.metersPerSecond)
-        if speedUnit == "mph" {
+        if speedUnit == Constants.imperialRate {
             newSpeed =  metersPerSecond.converted(to: UnitSpeed.milesPerHour)
         }
         else {

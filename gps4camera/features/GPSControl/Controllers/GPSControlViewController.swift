@@ -28,11 +28,20 @@ class GPSControlViewController: UIViewController {
     @IBOutlet weak var accuracyTitle: UILabel!
     @IBOutlet weak var elapsedTimeLabel: UILabel!
     @IBOutlet weak var clockLabel: UILabel!
+    @IBOutlet weak var temperatureWidget: LEDWidget!
+    @IBOutlet weak var temperatureTitle: UILabel!
     
     private var viewModel: GPSControlViewModel
     private var disposeBag: DisposeBag = DisposeBag()
     private weak var container: Container?
     private var lastSpeed: Double = 0
+    
+    private enum Constants {
+        static let backgroundColor = UIColor(hexString: "96ad9d")
+        static let foregroundColor: UIColor = .black
+        static let speedUnitKey = "speed_units"
+        static let temperatureUnitKey = "temperature_units"
+    }
 
     public init(container: Container) {
         self.container = container
@@ -64,7 +73,7 @@ class GPSControlViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(hexString: "96ad9d")
+        configureColors()
         
         setupObservers()
 
@@ -87,6 +96,33 @@ class GPSControlViewController: UIViewController {
     }
     
     // MARK: - Private Functions
+    
+    private func configureColors() {
+        let backgroundColor = Constants.backgroundColor
+        let textColor = Constants.foregroundColor
+
+        view.backgroundColor = backgroundColor
+
+        let config = LEDWidgetColorConfig(color: textColor, background: backgroundColor)
+        let widgets = [speedWidget,
+                       distanceWidget,
+                       maxSpeedWidget,
+                       altitudeWidget,
+                       headingWidget,
+                       accuracyWidget,
+                       temperatureWidget
+        ]
+        
+        for widget in widgets {
+            widget?.setColor(config: config)
+        }
+        
+        if let labels = view.subviews.filter({ $0 is UILabel }) as? [UILabel] {
+            for label in labels {
+                label.textColor = textColor
+            }
+        }
+    }
     
     private func setupObservers() {
         viewModel.gpsButtonText.observeNext { [weak self] (title) in
@@ -170,7 +206,7 @@ class GPSControlViewController: UIViewController {
             strongSelf.elapsedTimeLabel.text = elapsed
         }.dispose(in: disposeBag)
         
-        UserDefaults.standard.reactive.keyPath("speed_units", ofType: Optional<String>.self, context: .immediateOnMain).observeNext { [weak self] (newValue) in
+        UserDefaults.standard.reactive.keyPath(Constants.speedUnitKey, ofType: Optional<String>.self, context: .immediateOnMain).observeNext { [weak self] (newValue) in
             guard let strongSelf = self, let newValueExists = newValue else {
                 return
             }
@@ -180,13 +216,29 @@ class GPSControlViewController: UIViewController {
 
             var distanceUnit = "km"
             var distanceUnitSmall = "m"
-            if newValueExists == "mph" {
+            if newValueExists == GPSControlViewModel.Constants.imperialRate {
                 distanceUnit = "miles"
                 distanceUnitSmall = "ft"
             }
             
             strongSelf.distanceTitle.text =  "distance - \(distanceUnit)"
             strongSelf.accuracyTitle.text = "accuracy - \(distanceUnitSmall)"
+        }.dispose(in: disposeBag)
+        
+        UserDefaults.standard.reactive.keyPath(Constants.temperatureUnitKey, ofType: Optional<String>.self, context: .immediateOnMain).observeNext { [weak self] (newValue) in
+            guard let strongSelf = self, let valueExists = newValue, let firstChar = valueExists.first else {
+                return
+            }
+            
+            strongSelf.temperatureTitle.text = "temperature - \(firstChar)"
+        }
+
+        viewModel.temperatureForDisplay.observeNext { [weak self] (temperature) in
+            guard let strongSelf = self else {
+                return
+            }
+            
+            strongSelf.temperatureWidget.setValue(temperature)
         }.dispose(in: disposeBag)
     }
 }

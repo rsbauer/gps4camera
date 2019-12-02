@@ -30,6 +30,8 @@
                 <outlet property="maxSpeedWidget" destination="1G6-Gr-PpV" id="aGR-nu-F2s"/>
                 <outlet property="speedUnitLabel" destination="8PU-K9-aZJ" id="dOT-G4-udy"/>
                 <outlet property="speedWidget" destination="Nae-u6-oeO" id="IqZ-cb-klV"/>
+                <outlet property="temperatureTitle" destination="aJH-Li-gO4" id="pGc-bH-7Wk"/>
+                <outlet property="temperatureWidget" destination="llh-OF-iVS" id="KDf-Tw-5FC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -71,6 +73,14 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="67" id="Yto-QT-LjW"/>
                         <constraint firstAttribute="width" constant="171" id="tPY-LY-IJF"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="llh-OF-iVS" customClass="LEDWidget" customModule="gps4camera" customModuleProvider="target">
+                    <rect key="frame" x="20" y="326" width="171" height="67"/>
+                    <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="67" id="L0V-wP-zJs"/>
+                        <constraint firstAttribute="width" constant="171" id="R37-x7-fXu"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mph" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8PU-K9-aZJ">
@@ -197,13 +207,25 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="temperature -  f" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJH-Li-gO4">
+                    <rect key="frame" x="19" y="386" width="172" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="172" id="90K-yu-NRT"/>
+                        <constraint firstAttribute="height" constant="24" id="Y2y-xD-v7S"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="1G6-Gr-PpV" firstAttribute="top" secondItem="AIg-Sx-NTC" secondAttribute="bottom" constant="8" id="0MH-so-doZ"/>
                 <constraint firstItem="OUd-kE-Rim" firstAttribute="top" secondItem="qqr-Ka-V3f" secondAttribute="bottom" constant="33" id="0Un-SE-AcK"/>
+                <constraint firstItem="aJH-Li-gO4" firstAttribute="top" secondItem="tRh-g8-mx3" secondAttribute="bottom" constant="74" id="2a2-Yv-hW0"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="F60-M7-R7P" secondAttribute="trailing" constant="19" id="4CN-Yl-IHN"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AIg-Sx-NTC" secondAttribute="trailing" constant="19" id="4Ga-lB-Ouw"/>
+                <constraint firstItem="aJH-Li-gO4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="19" id="5E9-zA-Dka"/>
                 <constraint firstItem="GgI-rC-x5E" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="A3O-DL-GvT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ruv-Hu-rtl" secondAttribute="trailing" constant="19" id="AAI-Gg-fQu"/>
                 <constraint firstItem="c8E-JP-ueQ" firstAttribute="top" secondItem="F60-M7-R7P" secondAttribute="bottom" constant="20" id="AUC-D5-gfq"/>
@@ -226,6 +248,7 @@
                 <constraint firstItem="YYd-LP-nMt" firstAttribute="top" secondItem="10m-vD-Uei" secondAttribute="bottom" constant="30" id="TEg-3A-OH0"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="10m-vD-Uei" secondAttribute="trailing" constant="19" id="Vau-CN-DKb"/>
                 <constraint firstItem="tRh-g8-mx3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="YrO-kO-tVk"/>
+                <constraint firstItem="llh-OF-iVS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="ag3-nt-t2E"/>
                 <constraint firstItem="MXA-iE-Lpr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="deL-X8-hHe"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cuy-5C-DRb" secondAttribute="trailing" constant="19" id="gqu-Aa-ol1"/>
                 <constraint firstItem="tRh-g8-mx3" firstAttribute="top" secondItem="bqc-uu-MAM" secondAttribute="bottom" constant="65" id="hsW-7f-q93"/>
@@ -233,6 +256,7 @@
                 <constraint firstItem="ruv-Hu-rtl" firstAttribute="top" secondItem="8PU-K9-aZJ" secondAttribute="bottom" constant="16" id="khn-D1-DNG"/>
                 <constraint firstItem="qJC-Ah-4Am" firstAttribute="top" secondItem="bqc-uu-MAM" secondAttribute="bottom" constant="33" id="rDk-Ib-9af"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Nae-u6-oeO" secondAttribute="trailing" constant="19" id="ted-bl-5ZZ"/>
+                <constraint firstItem="llh-OF-iVS" firstAttribute="top" secondItem="tRh-g8-mx3" secondAttribute="bottom" constant="14" id="wQn-Uz-HRP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OUd-kE-Rim" secondAttribute="trailing" constant="20" id="zqv-H4-bsN"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
