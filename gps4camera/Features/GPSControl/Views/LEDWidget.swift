@@ -55,6 +55,12 @@ public class LEDWidget: NibView {
         let valueStr = "\(rounded)"
         let parts = valueStr.components(separatedBy: ".")
         
+        if parts[0] == "-999" {
+            majorValueLabel.text = "-"
+            minorValueLabel.text = ""
+            return
+        }
+        
         majorValueLabel.text = parts[0]
         minorValueLabel.text = "\(parts[1])"
     }

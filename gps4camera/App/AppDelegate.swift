@@ -29,6 +29,8 @@ class AppDelegate: PluggableApplicationDelegate, AppDelegateType {
         inboundContainer.register(DataStoreProviderType.self) { [weak self] _ in
             DataStoreProvider(context: self?.persistentContainer.viewContext)
         }
+        inboundContainer.register(NetworkProviderType.self) { _ in NetworkProvider() }
+        inboundContainer.register(WeatherProviderType.self) { _ in WeatherProvider(networkProvider: NetworkProvider()) }
     }
 
     override var services: [ApplicationService] {

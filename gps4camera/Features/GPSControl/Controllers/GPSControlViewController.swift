@@ -47,18 +47,19 @@ class GPSControlViewController: UIViewController {
         self.container = container
         let locationManager = container.resolve(LocationManagerType.self)
         let dataStore = container.resolve(DataStoreProviderType.self)
-        viewModel = GPSControlViewModel(manager: locationManager, dataStore: dataStore)
+        let weatherProvider = container.resolve(WeatherProviderType.self)
+        viewModel = GPSControlViewModel(manager: locationManager, dataStore: dataStore, weatherProvider: weatherProvider)
 
         super.init(nibName: nil, bundle: nil)
     }
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        viewModel = GPSControlViewModel(manager: nil, dataStore: nil)
+        viewModel = GPSControlViewModel(manager: nil, dataStore: nil, weatherProvider: nil)
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
     required init?(coder: NSCoder) {
-        viewModel = GPSControlViewModel(manager: nil, dataStore: nil)
+        viewModel = GPSControlViewModel(manager: nil, dataStore: nil, weatherProvider: nil)
         super.init(coder: coder)
     }
     
@@ -233,7 +234,7 @@ class GPSControlViewController: UIViewController {
             strongSelf.temperatureTitle.text = "temperature - \(firstChar)"
         }
 
-        viewModel.temperatureForDisplay.observeNext { [weak self] (temperature) in
+        viewModel.temperature.observeNext { [weak self] (temperature) in
             guard let strongSelf = self else {
                 return
             }

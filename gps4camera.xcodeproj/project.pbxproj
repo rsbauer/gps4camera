@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5B403100BC3982912315417E /* Pods_gps4camera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB08968873AE12497C84A35 /* Pods_gps4camera.framework */; };
+		660159EE2394B33300760E0B /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660159ED2394B33300760E0B /* NetworkProvider.swift */; };
+		660159F02394B3B500760E0B /* WeatherProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660159EF2394B3B500760E0B /* WeatherProvider.swift */; };
 		661700AC238F145800973DBA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661700AB238F145800973DBA /* SettingsViewController.swift */; };
 		661700AE238F152A00973DBA /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 661700AD238F152A00973DBA /* Settings.bundle */; };
 		661700B0238F527C00973DBA /* ShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661700AF238F527C00973DBA /* ShareManager.swift */; };
@@ -79,6 +81,8 @@
 /* Begin PBXFileReference section */
 		1AB08968873AE12497C84A35 /* Pods_gps4camera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gps4camera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62D9568B407B0A43C4671E0C /* Pods_gps4cameraUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gps4cameraUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		660159ED2394B33300760E0B /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		660159EF2394B3B500760E0B /* WeatherProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherProvider.swift; sourceTree = "<group>"; };
 		661700AB238F145800973DBA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		661700AD238F152A00973DBA /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		661700AF238F527C00973DBA /* ShareManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareManager.swift; sourceTree = "<group>"; };
@@ -169,6 +173,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		660159EC2394B32100760E0B /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				660159ED2394B33300760E0B /* NetworkProvider.swift */,
+				660159EF2394B3B500760E0B /* WeatherProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
 		661700A9238F143A00973DBA /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -432,6 +445,7 @@
 		66F9B858235BFEF7002297C6 /* gps4camera */ = {
 			isa = PBXGroup;
 			children = (
+				660159EC2394B32100760E0B /* Providers */,
 				669E8FC3238B0A81002FF27A /* Repositories */,
 				669E8FBB238ADBFE002FF27A /* Managers */,
 				669E8FB3238984C7002FF27A /* Utils */,
@@ -770,6 +784,7 @@
 				669E8FCA238B0B9E002FF27A /* GPXFormat.swift in Sources */,
 				6680D40D2391C63800753A2A /* NibView.swift in Sources */,
 				669E8FC0238AE0E0002FF27A /* LocationMessage.swift in Sources */,
+				660159EE2394B33300760E0B /* NetworkProvider.swift in Sources */,
 				66F9B88D235BFF3A002297C6 /* MainViewController.swift in Sources */,
 				6680D4092391C53600753A2A /* LEDWidget.swift in Sources */,
 				669E8FD5238B51C1002FF27A /* FilesViewModel.swift in Sources */,
@@ -777,6 +792,7 @@
 				669E8FE3238B7300002FF27A /* FileDetailsViewModel.swift in Sources */,
 				6680D4112391FE1D00753A2A /* UIFont+BestFit.swift in Sources */,
 				661700AC238F145800973DBA /* SettingsViewController.swift in Sources */,
+				660159F02394B3B500760E0B /* WeatherProvider.swift in Sources */,
 				66F9B85A235BFEF7002297C6 /* AppDelegate.swift in Sources */,
 				669E8FBA238AD56E002FF27A /* MessageBroker.swift in Sources */,
 				661700B0238F527C00973DBA /* ShareManager.swift in Sources */,

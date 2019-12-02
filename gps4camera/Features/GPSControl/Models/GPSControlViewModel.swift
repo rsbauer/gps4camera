@@ -53,11 +53,11 @@ public class GPSControlViewModel {
     
     private(set) var gpsButtonText = Observable("")
     private(set) var track: Track?
-    private(set) var speed = Observable<Double>(0)
+    private(set) var speed = Observable<Double>(-999)
     private(set) var distanceForDisplay = Observable<Double>(0)
     private(set) var distanceInMeters = Observable<Double>(0)
     private(set) var repositoryKind = Observable(FileRepositoryKind.kml)
-    private(set) var maxSpeed = Observable<Double>(0)
+    private(set) var maxSpeed = Observable<Double>(-999)
     private(set) var altitudeInMeters = Observable<Double>(0)
     private(set) var altitudeForDisplay = Observable<Double>(0)
     private(set) var heading = Observable<Double>(0)
@@ -66,16 +66,18 @@ public class GPSControlViewModel {
     private(set) var accuracyInMeters = Observable<Double>(0)
     private(set) var elapsedTime = Observable("00.00.00")
     private(set) var clock = Observable("")
-    private(set) var temperatureForDisplay = Observable<Double>(0)
-    private var temperature = Observable<Double>(0)
+    private(set) var temperature = Observable<Double>(-999)
     
     private var locationManager: LocationManagerType?
     private var dataStore: DataStoreProviderType?
+    private var weatherProvider: WeatherProviderType?
     private var stateMachine: GPSStateMachine
     private var disposeBag: DisposeBag = DisposeBag()
     private var speedUnit: String = Constants.imperialRate
+    private var temperatureUnit = Observable(Constants.defaultTemperatureUnit)
     private var previousLocation: CLLocation?
     private var clockTimer: Timer?
+    private var temperatureTimer: Timer?
     private var startTime: Date = Date()
     private let clockDateFormatter = DateFormatter()
 
@@ -85,10 +87,16 @@ public class GPSControlViewModel {
         static let clockDate12Format = "hh.mm.ss"
         static let imperialRate = "mph"
         static let clockUnitKey = "clock_format"
+        static let temperatureTimerIntervalInSeconds: TimeInterval = 600
+        static let defaultTemperatureUnit = "Fahrenheit"
+        static let temperatureUnitKey = "temperature_units"
+        static let celsius = "Celsius"
+        static let fahrenheit = "Fahrenheit"
     }
     
-    init(manager: LocationManagerType?, dataStore: DataStoreProviderType?) {
+    init(manager: LocationManagerType?, dataStore: DataStoreProviderType?, weatherProvider: WeatherProviderType?) {
         locationManager = manager
+        self.weatherProvider = weatherProvider
         self.dataStore = dataStore
         
         guard let locationManagerExists = manager else {
@@ -119,11 +127,14 @@ public class GPSControlViewModel {
         }.dispose(in: disposeBag)
         
         setupClockTimer()
+        weatherProvider?.setDelegate(delegate: self)
     }
 
     public func shutdown() {
         clockTimer?.invalidate()
         clockTimer = nil
+        temperatureTimer?.invalidate()
+        temperatureTimer = nil
         
         disposeBag.dispose()
         disposeBag = DisposeBag()
@@ -210,6 +221,34 @@ public class GPSControlViewModel {
 
             strongSelf.accuracyForDisplay.value = newValue.value
         }.dispose(in: disposeBag)
+        
+        UserDefaults.standard.reactive.keyPath(Constants.temperatureUnitKey, ofType: Optional<String>.self, context: .immediateOnMain).observeNext { [weak self] (newValue) in
+            guard let strongSelf = self, let newValueExists = newValue else {
+                return
+            }
+            
+            strongSelf.temperatureUnit.value = newValueExists
+        }.dispose(in: disposeBag)
+        
+        temperatureUnit.observeNext { [weak self] (unit) in
+            guard let strongSelf = self, strongSelf.temperature.value != -999 else {
+                return
+            }
+
+            var from = UnitTemperature.fahrenheit
+            var to = UnitTemperature.celsius
+            
+            if unit == Constants.fahrenheit {
+                from = UnitTemperature.celsius
+                to = UnitTemperature.fahrenheit
+            }
+            
+            var localTemperature = Measurement(value: strongSelf.temperature.value, unit: from)
+            localTemperature = localTemperature.converted(to: to)
+
+            strongSelf.temperature.value = localTemperature.value
+        }.dispose(in: disposeBag)
+        
     }
 
     public func startGPS() {
@@ -234,6 +273,9 @@ public class GPSControlViewModel {
     }
     
     public func stopGPS() {
+        temperatureTimer?.invalidate()
+        temperatureTimer = nil
+        
         stateMachine.enter(GPSOffState.self)
         updateGPSButtonText()
         
@@ -291,6 +333,30 @@ public class GPSControlViewModel {
         
         save(location: location)
         previousLocation = location
+        startWeatherTrackingIfNeeded()
+    }
+    
+    private func startWeatherTrackingIfNeeded() {
+        guard temperatureTimer == nil else {
+            return
+        }
+
+        updateTemperature()
+        temperatureTimer = Timer.scheduledTimer(withTimeInterval: Constants.temperatureTimerIntervalInSeconds, repeats: true, block: { [weak self] (timer) in
+            guard let strongSelf = self else {
+                return
+            }
+            
+            strongSelf.updateTemperature()
+        })
+    }
+    
+    private func updateTemperature() {
+        guard let location = previousLocation else {
+            return
+        }
+        
+        weatherProvider?.getTemperature(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
     }
     
     private func headingUpdated(heading: CLHeading) {
@@ -341,14 +407,13 @@ public class GPSControlViewModel {
             if strongSelf.stateMachine.currentState is GPSOnState {
                 let (hours, minutes, seconds) = strongSelf.secondsToHoursMinutesSeconds(seconds: elapsed)
                 let secondsRounded: Int = Int(round(seconds))
-                let padFormat = "%02d"
                 
                 // Gah, String(format: "%02d.%02d.%02d", hours, minutes, secondsRounded) should have worked, but was
                 // putting seconds in the first parameter
                 // Doing it manually below
-                let hourDisplay = String(format: padFormat, hours)
-                let minuteDisplay = String(format: padFormat, minutes)
-                let secondDisplay = String(format: padFormat, secondsRounded)
+                let hourDisplay = String(format: "%02.f", hours)
+                let minuteDisplay = String(format: "%02.f", minutes)
+                let secondDisplay = String(format: "%02d", secondsRounded)
                 strongSelf.elapsedTime.value = "\(hourDisplay).\(minuteDisplay).\(secondDisplay)"
             }
         })
@@ -372,5 +437,16 @@ extension GPSControlViewModel: Subscriber {
                 headingUpdated(heading: heading)
             }
         }
+    }
+}
+
+extension GPSControlViewModel: WeatherProviderDelegate {
+    public func update(weather: Weather) {
+        var localTemperature = Measurement(value: weather.temperatureInF, unit: UnitTemperature.fahrenheit)
+        if temperatureUnit.value == Constants.celsius {
+            localTemperature = localTemperature.converted(to: UnitTemperature.celsius)
+        }
+
+        temperature.value = localTemperature.value
     }
 }
