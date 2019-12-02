@@ -104,7 +104,6 @@ class GPSControlViewController: UIViewController {
 
             strongSelf.lastSpeed = speed
             strongSelf.speedWidget?.setValue(speed)
-//            strongSelf.speedUnitLabel.text = strongSelf.getSpeedUnit()
         }.dispose(in: disposeBag)
         
         viewModel.distanceForDisplay.observeNext { [weak self] (distance) in
@@ -112,14 +111,7 @@ class GPSControlViewController: UIViewController {
                 return
             }
             
-//            let speedUnits = strongSelf.getSpeedUnit()
-//            var distanceUnit = "km"
-//            if speedUnits == "mph" {
-//                distanceUnit = "miles"
-//            }
-            
             strongSelf.distanceWidget.setValue(distance)
-//            strongSelf.distanceTitle.text =  "distance - \(distanceUnit)"
         }.dispose(in: disposeBag)
         
         viewModel.maxSpeed.observeNext { [weak self] (speed) in
@@ -158,15 +150,8 @@ class GPSControlViewController: UIViewController {
             guard let strongSelf = self else {
                 return
             }
-            
-//            let speedUnits = strongSelf.getSpeedUnit()
-//            var distanceUnit = "m"
-//            if speedUnits == "mph" {
-//                distanceUnit = "ft"
-//            }
 
             strongSelf.accuracyWidget.setValue(accuracy)
-//            strongSelf.accuracyTitle.text = "accuracy - \(distanceUnit)"
         }.dispose(in: disposeBag)
         
         viewModel.clock.observeNext { [weak self] (clock) in
@@ -184,13 +169,6 @@ class GPSControlViewController: UIViewController {
             
             strongSelf.elapsedTimeLabel.text = elapsed
         }.dispose(in: disposeBag)
-        
-        
-        
-//            userDefaults.reactive
-//            .keyPath(LocationManager.HomeLocationKey, ofType: Optional<String>.self, context: .immediateOnMain)
-//            ...
-        
         
         UserDefaults.standard.reactive.keyPath("speed_units", ofType: Optional<String>.self, context: .immediateOnMain).observeNext { [weak self] (newValue) in
             guard let strongSelf = self, let newValueExists = newValue else {
@@ -211,14 +189,4 @@ class GPSControlViewController: UIViewController {
             strongSelf.accuracyTitle.text = "accuracy - \(distanceUnitSmall)"
         }.dispose(in: disposeBag)
     }
-    
-    /*
-    private func getSpeedUnit() -> String {
-        if let speedUnits = UserDefaults.standard.value(forKey: "speed_units") as? String {
-            return speedUnits
-        }
-        
-        return "mph"
-    }
-     */
 }
