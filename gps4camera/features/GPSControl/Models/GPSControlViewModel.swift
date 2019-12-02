@@ -234,9 +234,6 @@ public class GPSControlViewModel {
     }
     
     public func stopGPS() {
-        clockTimer?.invalidate()
-        clockTimer = nil
-        
         stateMachine.enter(GPSOffState.self)
         updateGPSButtonText()
         

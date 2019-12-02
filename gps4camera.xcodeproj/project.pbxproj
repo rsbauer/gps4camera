@@ -438,7 +438,7 @@
 				66543D30237B16560028F27C /* Assets */,
 				66689D3F237A5D2C0002837F /* StateMachines */,
 				666185EE2378DF5200B63986 /* App */,
-				66F9B889235BFF1C002297C6 /* features */,
+				66F9B889235BFF1C002297C6 /* Features */,
 				66F9B867235BFEF7002297C6 /* Info.plist */,
 				669E8FE8238B88B3002FF27A /* Location.xcdatamodeld */,
 			);
@@ -463,7 +463,7 @@
 			path = gps4cameraUITests;
 			sourceTree = "<group>";
 		};
-		66F9B889235BFF1C002297C6 /* features */ = {
+		66F9B889235BFF1C002297C6 /* Features */ = {
 			isa = PBXGroup;
 			children = (
 				661700A9238F143A00973DBA /* Settings */,
@@ -472,7 +472,7 @@
 				666F743B23896E7300D5ADE2 /* GPSControl */,
 				66F9B88A235BFF21002297C6 /* main */,
 			);
-			path = features;
+			path = Features;
 			sourceTree = "<group>";
 		};
 		66F9B88A235BFF21002297C6 /* main */ = {
