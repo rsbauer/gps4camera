@@ -84,6 +84,7 @@ public class GPSControlViewModel {
         static let clockDate24Format = "HH.mm.ss"
         static let clockDate12Format = "hh.mm.ss"
         static let imperialRate = "mph"
+        static let clockUnitKey = "clock_format"
     }
     
     init(manager: LocationManagerType?, dataStore: DataStoreProviderType?) {
@@ -104,7 +105,7 @@ public class GPSControlViewModel {
         MessageBroker.sharedMessageBroker.subscribe(self, messageKey: LocationMessage.locationType)
 
         clockDateFormatter.dateFormat = Constants.clockDate12Format
-        UserDefaults.standard.reactive.keyPath("clock_format", ofType: Optional<String>.self, context: .immediateOnMain).observeNext { [weak self] (clockFormat) in
+        UserDefaults.standard.reactive.keyPath(Constants.clockUnitKey, ofType: Optional<String>.self, context: .immediateOnMain).observeNext { [weak self] (clockFormat) in
             guard let strongSelf = self, let formatExists = clockFormat else {
                 return
             }
