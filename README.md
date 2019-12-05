@@ -23,7 +23,7 @@ This little app is, at the heart, just a GPS track recorder.   While it's record
 
 GPS View | QR Code | Map View
 --- | --- | ---
-<img src="https://raw.githubusercontent.com/rsbauer/gps4camera/master/images/gps.png" width="200"> | <img src="https://raw.githubusercontent.com/rsbauer/gps4camera/master/images/qr.png" width="200"> | <img src="https://raw.githubusercontent.com/rsbauer/gps4camera/master/images/map.png" width="200">
+<img src="https://raw.githubusercontent.com/rsbauer/gps4camera/master/images/gps.png" width="300"> | <img src="https://raw.githubusercontent.com/rsbauer/gps4camera/master/images/qr.png" width="300"> | <img src="https://raw.githubusercontent.com/rsbauer/gps4camera/master/images/map.png" width="300">
 
 ### Getting Started
 
@@ -49,7 +49,7 @@ Before starting, you will need Cocoapods installed.
 
 5. Open the ComicReader.xcworkspace
 
-  `open ComicReader.wxworkspace`
+  `open gps4camera.xcworkspace`
 
 6. Build!
 
