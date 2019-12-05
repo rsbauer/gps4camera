@@ -21,11 +21,11 @@ This little app is, at the heart, just a GPS track recorder.   While it's record
 
 ### Screen Shots
 
-![GPS Display](https://raw.githubusercontent.com/rsbauer/gps4camera/master/images/gps.png | width=200)
+![GPS](https://raw.githubusercontent.com/rsbauer/gps4camera/master/images/gps.png | width=200)
 
-![QR Code](https://raw.githubusercontent.com/rsbauer/gps4camera/master/images/qr.png | width=200)
+![QR](https://raw.githubusercontent.com/rsbauer/gps4camera/master/images/qr.png | width=200)
 
-![Map Display](https://raw.githubusercontent.com/rsbauer/gps4camera/master/images/map.png | width=200)
+![Map](https://raw.githubusercontent.com/rsbauer/gps4camera/master/images/map.png | width=200)
 
 ### Getting Started
 
