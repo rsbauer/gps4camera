@@ -33,10 +33,10 @@ class TimeSyncViewController: UIViewController {
         title = "Sync"
         dateFormatForDisplay.dateFormat = "hh:mm:ssa"
         dateFormatForDateDisplay.dateFormat = "EEEE, MMMM d, yyyy"
-        dateFormatForQR.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
-        dateFormatForQR.timeZone = TimeZone(secondsFromGMT: 0)
-        dateFormatForQR.locale = Locale(identifier: "en_US_POSIX")
-        
+//        dateFormatForQR.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+//        dateFormatForQR.timeZone = TimeZone(secondsFromGMT: 0)
+//        dateFormatForQR.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatForQR.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SS"
         currentTime = Date()
     }
     
@@ -70,7 +70,7 @@ class TimeSyncViewController: UIViewController {
 
         if let filter = CIFilter(name: "CIQRCodeGenerator") {
             filter.setValue(data, forKey: "inputMessage")
-            let transform = CGAffineTransform(scaleX: 3, y: 3)
+            let transform = CGAffineTransform(scaleX: 10, y: 10)
 
             if let output = filter.outputImage?.transformed(by: transform) {
                 return UIImage(ciImage: output)

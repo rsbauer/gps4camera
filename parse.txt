@@ -1,0 +1,10 @@
+https://photo.stackexchange.com/questions/7919/how-to-shift-exif-date-time-created-by-time-in-days-hours-minutes
+
+Date time adjust:
+
+exiftool "-AllDates+=1:12:28 14:54:32" -verbose *.jpg to adjust all JPG image dates by adding 1 year, 12 month, 28 days, 14 hours, 54 minutes, 32 seconds
+
+https://exiftool.org/Shift.html
+
+
+https://django.cowhite.com/blog/reading-qr-code-from-image-using-python/
