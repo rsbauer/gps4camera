@@ -52,7 +52,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "/Users/astro/code/ios/gps4camera/parse NEF"
+            argument = "&quot;/Users/astro/Pictures/allphotos/20200604 Nyack Beach State Park&quot; NEF"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

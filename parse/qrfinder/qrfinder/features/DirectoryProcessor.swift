@@ -21,13 +21,6 @@ public class DirectoryProcessor {
                 }
                 return nil
             }
-            
-//            for item in items {
-//                if item.lowercased().contains(".\(fileExtNormalized)") {
-//                    print(item)
-//                }
-//            }
-            
         } catch {
             print(error.localizedDescription)
         }

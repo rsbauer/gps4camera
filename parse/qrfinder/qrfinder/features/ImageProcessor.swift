@@ -76,7 +76,14 @@ public class ImageProcessor {
         
         let exifCommand = "exiftool \"-AllDates\(incrementDirection)=\(diff.year ?? 0):\(diff.month ?? 0):\(diff.day ?? 0) \(diff.hour ?? 0):\(diff.minute ?? 0):\(diff.second ?? 0)\""
         
-        let interval = DateInterval(start: cameraDate, end: qrDate)
+        var start = cameraDate
+        var end = qrDate
+        if end < start {
+            start = qrDate
+            end = cameraDate
+        }
+        
+        let interval = DateInterval(start: start, end: end)
         
         return QRImage(qrDate: qrDate, cameraDate: cameraDate, path: name, exifCommand: exifCommand, duration: interval.duration)
     }
