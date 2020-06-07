@@ -12,6 +12,7 @@
 		6619B00D247758530020EEAD /* DirectoryProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6619B00C247758530020EEAD /* DirectoryProcessor.swift */; };
 		6619B00F247760790020EEAD /* QRImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6619B00E247760790020EEAD /* QRImage.swift */; };
 		6619B01124776C730020EEAD /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6619B01024776C730020EEAD /* Shell.swift */; };
+		665EBB66248D7B5200048F9B /* GeoTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665EBB65248D7B5200048F9B /* GeoTag.swift */; };
 		66E3C91324760BF2004C4DF8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E3C91224760BF2004C4DF8 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		6619B00C247758530020EEAD /* DirectoryProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryProcessor.swift; sourceTree = "<group>"; };
 		6619B00E247760790020EEAD /* QRImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRImage.swift; sourceTree = "<group>"; };
 		6619B01024776C730020EEAD /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
+		665EBB65248D7B5200048F9B /* GeoTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoTag.swift; sourceTree = "<group>"; };
 		66E3C90F24760BF2004C4DF8 /* qrfinder */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = qrfinder; sourceTree = BUILT_PRODUCTS_DIR; };
 		66E3C91224760BF2004C4DF8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -56,6 +58,7 @@
 				6619B00C247758530020EEAD /* DirectoryProcessor.swift */,
 				6619B00E247760790020EEAD /* QRImage.swift */,
 				6619B01024776C730020EEAD /* Shell.swift */,
+				665EBB65248D7B5200048F9B /* GeoTag.swift */,
 			);
 			path = features;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				66E3C91324760BF2004C4DF8 /* main.swift in Sources */,
 				6619B0092477507A0020EEAD /* ImageProcessor.swift in Sources */,
 				6619B00F247760790020EEAD /* QRImage.swift in Sources */,
+				665EBB66248D7B5200048F9B /* GeoTag.swift in Sources */,
 				6619B00B247751100020EEAD /* CGImageSource+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -24,6 +24,7 @@ if CommandLine.arguments.count > 2 {
     for path in paths  {
         print("Processing: \(path)")
         if let qrImage = imageProcessor.processImage(name: path) {
+            print("QR code found! \(qrImage)")
             qrImageFound = qrImage
             break
         }
@@ -36,4 +37,9 @@ if CommandLine.arguments.count > 2 {
         }
     }
     
+    var mapPaths = DirectoryProcessor().directoryList(path: path, fileExtension: "kml")
+    mapPaths.append(contentsOf: DirectoryProcessor().directoryList(path: path, fileExtension: "gpx"))
+    
+    print("Applying \(mapPaths.count) map files (kml/gpx) to images.")
+    GeoTag().using(mapPaths)
 }
