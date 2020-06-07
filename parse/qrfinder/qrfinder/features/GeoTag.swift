@@ -13,9 +13,9 @@ public final class GeoTag {
         static let exifCommand = "exiftool -overwrite_original -geotag="
     }
     
-    public func using(_ mapPaths: [String]) {
+    public func using(_ mapPaths: [URL]) {
         for path in mapPaths {
-            Shell.shell("\(Constants.exifCommand)\"\(path)\" ./")
+            Shell.shell("\(Constants.exifCommand)\"\(path.absoluteURL)\" ./")
         }
     }
 }

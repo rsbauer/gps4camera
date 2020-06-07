@@ -9,22 +9,22 @@
 import Foundation
 
 public class DirectoryProcessor {
-    public func directoryList(path: String, fileExtension: String) -> [String] {
-        let fileManager = FileManager.default
-        let fileExtNormalized = fileExtension.lowercased()
-        
-        do {
-            let items = try fileManager.contentsOfDirectory(atPath: path)
-            return items.compactMap { (item) -> String? in
-                if item.lowercased().contains(".\(fileExtNormalized)") {
-                    return "\(path)\(item)"
+    public func directoryList(path: String) -> [URL] {
+        let url = URL(fileURLWithPath: path)
+        var paths = [URL]()
+        if let enumarator = FileManager.default.enumerator(at: url, includingPropertiesForKeys: [.isRegularFileKey], options: [.skipsHiddenFiles, .skipsPackageDescendants, .skipsSubdirectoryDescendants]) {
+            for case let fileURL as URL in enumarator {
+                do {
+                    let fileAttributes = try fileURL.resourceValues(forKeys: [.isRegularFileKey])
+                    if fileAttributes.isRegularFile == true {
+                        paths.append(fileURL)
+                    }
+                } catch {
+                    print(error, fileURL)
                 }
-                return nil
             }
-        } catch {
-            print(error.localizedDescription)
         }
         
-        return []
+        return paths
     }
 }

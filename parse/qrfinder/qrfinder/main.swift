@@ -11,13 +11,12 @@ import Cocoa
 
 if CommandLine.arguments.count > 2 {
     var path = CommandLine.arguments[1]
-    let fileExt = CommandLine.arguments[2]
     if path.last != "/" {
         path = "\(path)/"
     }
     
     let imageProcessor = ImageProcessor()
-    let paths = DirectoryProcessor().directoryList(path: path, fileExtension: fileExt)
+    let paths = DirectoryProcessor().directoryList(path: path)
     
     var qrImageFound: QRImage?
     
@@ -37,9 +36,15 @@ if CommandLine.arguments.count > 2 {
         }
     }
     
-    var mapPaths = DirectoryProcessor().directoryList(path: path, fileExtension: "kml")
-    mapPaths.append(contentsOf: DirectoryProcessor().directoryList(path: path, fileExtension: "gpx"))
+    let mapPaths = paths.filter { (path) -> Bool in
+        let fileExt = path.pathExtension
+        if fileExt == "kml" || fileExt == "gpx" {
+            return true
+        }
+        
+        return false
+    }
     
-    print("Applying \(mapPaths.count) map files (kml/gpx) to images.")
+    print("Applying \(mapPaths.count) map file(s) (kml/gpx) to images.")
     GeoTag().using(mapPaths)
 }

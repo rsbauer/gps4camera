@@ -11,7 +11,7 @@ import Foundation
 public struct QRImage {
     let qrDate: Date
     let cameraDate: Date
-    let path: String
+    let path: URL
     let exifCommand: String
     let duration: TimeInterval
 }

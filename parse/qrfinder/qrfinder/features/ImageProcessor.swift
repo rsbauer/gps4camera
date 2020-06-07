@@ -16,8 +16,8 @@ public class ImageProcessor {
         self.dateFormatForQR.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SS"
     }
     
-    public func diskImage(from named: String) -> CGImage? {
-        guard let image = NSImage(contentsOfFile: named) else {
+    public func diskImage(from named: URL) -> CGImage? {
+        guard let image = NSImage(contentsOf: named) else {
             print("Unable to read image")
             return nil
         }
@@ -37,8 +37,8 @@ public class ImageProcessor {
         return nil
     }
     
-    public func imageSource(from name: String) -> CGImageSource? {
-        guard let data = NSData(contentsOfFile: name),
+    public func imageSource(from name: URL) -> CGImageSource? {
+        guard let data = NSData(contentsOf: name),
             let source = CGImageSourceCreateWithData((data as CFData), nil) else {
                 return nil
         }
@@ -46,11 +46,11 @@ public class ImageProcessor {
         return source
     }
 
-    public func readExif(from name: String) -> Dictionary<String, Any>? {
+    public func readExif(from name: URL) -> Dictionary<String, Any>? {
         return imageSource(from: name)?.metadata()
     }
     
-    public func processImage(name: String) -> QRImage? {
+    public func processImage(name: URL) -> QRImage? {
         guard let image = diskImage(from: name) else {
             print("Unable to open image \(name)")
             return nil
@@ -88,8 +88,8 @@ public class ImageProcessor {
         return QRImage(qrDate: qrDate, cameraDate: cameraDate, path: name, exifCommand: exifCommand, duration: interval.duration)
     }
     
-    public func adjustDates(using qrImage: QRImage, for path: String) {
-        Shell.shell("\(qrImage.exifCommand) \(path)")
+    public func adjustDates(using qrImage: QRImage, for path: URL) {
+        Shell.shell("\(qrImage.exifCommand) \(path.absoluteURL)")
     }
 }
 
