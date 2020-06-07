@@ -16,7 +16,32 @@
 
 <h1>How to</h1>
 
-<p>Use this app to record tracks.  They can be exported to a file your favorite track applications may use.  
+<p><b>For using this app to record tracks:</b>
 </p>
+<p>
+Press the record button to enable GPS recording.  Press the stop button to stop recording.
+</p>
+<p>
+At any time, the recorded tracks can be exported from the Files tab.  Either by swipping left and tapping Share or tap the file and then tap on Share.  Files can be shared using any sharing method available to your device such as email or text message.
+</p>
+
+<p><b>For using the app to record tracks for geo tagging</b></p>
+<p>
+Follow the steps above to record and export tracks.
+</p>
+<p>
+At some point during GPS track recording, before, or after, tap on Sync.  Then use the camera you plan to geo tag photos from to take a picture of the Sync tab.  It's recommended to select a shutter speed quick enough to keep the QR code sharp, otherwise the QR decoding step will fail.
+</p>
+<p>
+Collect the images and track file into the same directory on a Mac (PC support not yet available).
+</p>
+<p><b>Exiftool</b> MUST be installed before running <b>qrfinder</b>.  To install <a href="https://exiftool.org/install.html#OSX"><b>exiftool</b> on Mac<a/>.
+<p>
+Run <b>qrfinder "[path to images]"</b>
+</p>
+<p>
+If all goes well, <b>qrfinder</b> will locate the QR coded image, extract the date, then using <b>exiftool</b>, apply the date correct to all images in the directory.  Then it will use <b>exiftool</b> to geo tag the images in the directory, as long as a .gps or .kml file can be found.
+</p>
+
 </body>
 </html>
