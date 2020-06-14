@@ -53,11 +53,11 @@ public class GPSControlViewModel {
     
     private(set) var gpsButtonText = Observable("")
     private(set) var track: Track?
-    private(set) var speed = Observable<Double>(-999)
+    private(set) var speed = Observable<Double>(0)
     private(set) var distanceForDisplay = Observable<Double>(0)
     private(set) var distanceInMeters = Observable<Double>(0)
     private(set) var repositoryKind = Observable(FileRepositoryKind.kml)
-    private(set) var maxSpeed = Observable<Double>(-999)
+    private(set) var maxSpeed = Observable<Double>(0)
     private(set) var altitudeInMeters = Observable<Double>(0)
     private(set) var altitudeForDisplay = Observable<Double>(0)
     private(set) var heading = Observable<Double>(0)
@@ -322,7 +322,7 @@ public class GPSControlViewModel {
             newSpeed = metersPerSecond.converted(to: UnitSpeed.kilometersPerHour)
         }
 
-        speed.value = newSpeed.value
+        speed.value = (newSpeed.value >= 0) ? newSpeed.value : 0
         altitudeInMeters.value = location.altitude
         heading.value = location.course
         accuracyInMeters.value = location.horizontalAccuracy

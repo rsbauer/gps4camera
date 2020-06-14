@@ -226,7 +226,7 @@ class GPSControlViewController: UIViewController {
             strongSelf.accuracyTitle.text = "accuracy - \(distanceUnitSmall)"
         }.dispose(in: disposeBag)
         
-        UserDefaults.standard.reactive.keyPath(Constants.temperatureUnitKey, ofType: Optional<String>.self, context: .immediateOnMain).observeNext { [weak self] (newValue) in
+        _ = UserDefaults.standard.reactive.keyPath(Constants.temperatureUnitKey, ofType: Optional<String>.self, context: .immediateOnMain).observeNext { [weak self] (newValue) in
             guard let strongSelf = self, let valueExists = newValue, let firstChar = valueExists.first else {
                 return
             }

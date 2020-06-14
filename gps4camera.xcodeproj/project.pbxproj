@@ -977,15 +977,17 @@
 			baseConfigurationReference = DE41870DFE756BA102D52235 /* Pods-gps4camera.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AAG9GT5WNC;
+				DEVELOPMENT_TEAM = HCG5E33E5U;
 				INFOPLIST_FILE = gps4camera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rsbauer.gps4camera;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.rbauer.gps4camera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -996,15 +998,17 @@
 			baseConfigurationReference = AC5E82AF7AC65B3B47087F80 /* Pods-gps4camera.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AAG9GT5WNC;
+				DEVELOPMENT_TEAM = HCG5E33E5U;
 				INFOPLIST_FILE = gps4camera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rsbauer.gps4camera;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.rbauer.gps4camera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
