@@ -70,7 +70,9 @@ class FileDetailsViewController: UIViewController {
             return
         }
 
-        ShareManager.share(track: track, viewController: self)
+        if let barButton = navigationItem.rightBarButtonItem {
+            ShareManager.share(track: track, viewController: self, sender: barButton)
+        }
     }
         
     private func draw(track: Track, mapView: MKMapView) {

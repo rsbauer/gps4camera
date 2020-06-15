@@ -17,6 +17,27 @@ public class ShareManager {
     
     static func share(track: Track, viewController: UIViewController) {
         let alertController = UIAlertController(title: "Share Format", message: "Select file format to share", preferredStyle: .actionSheet)
+
+        if UIDevice.current.userInterfaceIdiom == .pad, let popoverController = alertController.popoverPresentationController {
+            popoverController.sourceView = viewController.view
+            popoverController.sourceRect = CGRect(x: viewController.view.bounds.midX, y: viewController.view.bounds.midY, width: 0, height: 0)
+            popoverController.permittedArrowDirections = []
+        }
+
+        ShareManager.share(track: track, viewController: viewController, alertController: alertController)
+    }
+    
+    static func share(track: Track, viewController: UIViewController, sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: "Share Format", message: "Select file format to share", preferredStyle: .actionSheet)
+
+        if let popoverController = alertController.popoverPresentationController {
+            popoverController.barButtonItem = sender
+        }
+
+        ShareManager.share(track: track, viewController: viewController, alertController: alertController)
+    }
+
+    static func share(track: Track, viewController: UIViewController, alertController: UIAlertController) {
         let kml = UIAlertAction(title: "KML", style: .default) { (action) in
             if let path = FileRepository.filename(for: track, format: .kml) {
                 let error = FileRepository.action(.export(path, .kml, track))
@@ -53,6 +74,13 @@ public class ShareManager {
     
     static private func shareFile(path: URL, viewController: UIViewController) {
         let activity = UIActivityViewController(activityItems: [path], applicationActivities: nil)
+
+        if UIDevice.current.userInterfaceIdiom == .pad, let popoverController = activity.popoverPresentationController {
+            popoverController.sourceView = viewController.view
+            popoverController.sourceRect = CGRect(x: viewController.view.bounds.midX, y: viewController.view.bounds.midY, width: 0, height: 0)
+            popoverController.permittedArrowDirections = []
+        }
+        
         activity.completionWithItemsHandler = { (activityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
             // Delete the file after having shared or cancelled.
             FileRepository.remove(path)

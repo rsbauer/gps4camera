@@ -27,6 +27,8 @@
 		666F74402389757B00D5ADE2 /* Segment7Standard.otf in Resources */ = {isa = PBXBuildFile; fileRef = 666F743F2389757A00D5ADE2 /* Segment7Standard.otf */; };
 		666F744723897D6500D5ADE2 /* LEDWidgetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666F744523897D6500D5ADE2 /* LEDWidgetCollectionViewCell.swift */; };
 		666F744823897D6500D5ADE2 /* LEDWidgetCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 666F744623897D6500D5ADE2 /* LEDWidgetCollectionViewCell.xib */; };
+		6677E9C02496ECE500B28600 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6677E9BF2496ECE500B28600 /* SnapshotHelper.swift */; };
+		6677E9C22496ED6800B28600 /* gps4cameraSnapShotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6677E9C12496ED6800B28600 /* gps4cameraSnapShotTests.swift */; };
 		6680D4092391C53600753A2A /* LEDWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6680D4082391C53600753A2A /* LEDWidget.swift */; };
 		6680D40B2391C54600753A2A /* LEDWidget.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6680D40A2391C54600753A2A /* LEDWidget.xib */; };
 		6680D40D2391C63800753A2A /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6680D40C2391C63800753A2A /* NibView.swift */; };
@@ -100,6 +102,8 @@
 		666F743F2389757A00D5ADE2 /* Segment7Standard.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Segment7Standard.otf; sourceTree = SOURCE_ROOT; };
 		666F744523897D6500D5ADE2 /* LEDWidgetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEDWidgetCollectionViewCell.swift; sourceTree = "<group>"; };
 		666F744623897D6500D5ADE2 /* LEDWidgetCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LEDWidgetCollectionViewCell.xib; sourceTree = "<group>"; };
+		6677E9BF2496ECE500B28600 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		6677E9C12496ED6800B28600 /* gps4cameraSnapShotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gps4cameraSnapShotTests.swift; sourceTree = "<group>"; };
 		6680D4082391C53600753A2A /* LEDWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEDWidget.swift; sourceTree = "<group>"; };
 		6680D40A2391C54600753A2A /* LEDWidget.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LEDWidget.xib; sourceTree = "<group>"; };
 		6680D40C2391C63800753A2A /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
@@ -472,7 +476,9 @@
 			isa = PBXGroup;
 			children = (
 				66F9B87B235BFEF8002297C6 /* gps4cameraUITests.swift */,
+				6677E9BF2496ECE500B28600 /* SnapshotHelper.swift */,
 				66F9B87D235BFEF8002297C6 /* Info.plist */,
+				6677E9C12496ED6800B28600 /* gps4cameraSnapShotTests.swift */,
 			);
 			path = gps4cameraUITests;
 			sourceTree = "<group>";
@@ -596,6 +602,7 @@
 				66F9B873235BFEF8002297C6 /* Sources */,
 				66F9B874235BFEF8002297C6 /* Frameworks */,
 				66F9B875235BFEF8002297C6 /* Resources */,
+				E00998E1025F88358CC915A4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -728,6 +735,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-gps4camera/Pods-gps4camera-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E00998E1025F88358CC915A4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-gps4cameraUITests/Pods-gps4cameraUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-gps4cameraUITests/Pods-gps4cameraUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-gps4cameraUITests/Pods-gps4cameraUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		EB1D688EFD73A83C02CFE072 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -828,6 +852,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				66F9B87C235BFEF8002297C6 /* gps4cameraUITests.swift in Sources */,
+				6677E9C22496ED6800B28600 /* gps4cameraSnapShotTests.swift in Sources */,
+				6677E9C02496ECE500B28600 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -979,7 +1005,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = HCG5E33E5U;
 				INFOPLIST_FILE = gps4camera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1001,7 +1027,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = HCG5E33E5U;
 				INFOPLIST_FILE = gps4camera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

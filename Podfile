@@ -7,22 +7,26 @@ target 'gps4camera' do
 
   # Pods for gps4camera
 
-  pod 'PluggableAppDelegate'
-  pod 'Swinject'
-  pod 'ReactiveKit'
-  pod 'Bond'
-  pod 'FontAwesome.swift'
-  pod 'InAppSettingsKit'
+  def common_pods
+    pod 'PluggableAppDelegate'
+    pod 'Swinject'
+    pod 'ReactiveKit'
+    pod 'Bond'
+    pod 'FontAwesome.swift'
+    pod 'InAppSettingsKit'
+  end
 
+  common_pods
 
   target 'gps4cameraTests' do
     inherit! :search_paths
-    # Pods for testing
+
   end
 
   target 'gps4cameraUITests' do
     inherit! :search_paths
-    # Pods for testing
+    
+    common_pods
   end
 
 end

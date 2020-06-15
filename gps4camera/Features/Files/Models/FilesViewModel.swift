@@ -23,6 +23,11 @@ public class FilesViewModel {
     private enum Constants {
         static let emptyItemTitle = "No tracks recorded yet"
     }
+    
+    private enum SortDirection {
+        case ascending
+        case descending
+    }
 
     init(dataStore: DataStoreProviderType?) {
         self.dataStore = dataStore
@@ -42,7 +47,10 @@ public class FilesViewModel {
             switch result {
             case .success(let tracks):
                 strongSelf.items.removeAll()
-                for track in tracks {
+                
+                let sortedTracks = strongSelf.sortTracks(tracks: tracks, direction: .descending)
+                
+                for track in sortedTracks {
                     let item = FileListDisplay(title: track.name ?? "Title not available", track: track)
                     strongSelf.items.append(item)
                 }
@@ -75,5 +83,24 @@ public class FilesViewModel {
         }
 
         return track.name ?? "File name not found"
+    }
+    
+    private func sortTracks(tracks: [Track], direction: SortDirection) -> [Track] {
+        let boolDirection = (direction == .ascending) ? true : false
+        
+        let sortedTracks = tracks.sorted { (lhs, rhs) -> Bool in
+            guard let lhsStart = lhs.start, let rhsStart = rhs.start else {
+                // we shouldn't get here unless something went sideways
+                return true
+            }
+            
+            if lhsStart < rhsStart {
+                return boolDirection
+            }
+            
+            return !boolDirection
+        }
+        
+        return sortedTracks
     }
 }

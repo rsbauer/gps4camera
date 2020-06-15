@@ -89,7 +89,6 @@ class FilesViewController: UIViewController {
                 return
             }
             
-            print("Delete button requesting deletion confirmation at \(index.row)")
             strongSelf.viewModel.removeItem(at: index.row)
         }.dispose(in: disposeBag)
     }
