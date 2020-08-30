@@ -29,7 +29,6 @@ GPS View | QR Code | Map View
 
 #### qrfinder
 
-
 The latest version can be found here: https://github.com/rsbauer/gps4camera/releases/ and look for the zip file with "qrfinder" in the name.  
 
 You can put this in the same directory as the photos you wish to update.  Although it may be better to put it in /usr/local/bin so it'll be available from any directory.
@@ -48,6 +47,7 @@ or something like this:
 
 Make sure you have either a gpx or kml file with the gps coordinates in the same directory.  Otherwise, the script will not make any changes.
 
+## Development 
 
 ### Getting Started
 
