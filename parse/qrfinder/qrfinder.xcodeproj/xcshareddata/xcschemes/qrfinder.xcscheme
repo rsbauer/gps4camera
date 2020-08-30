@@ -52,8 +52,8 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "&quot;/Users/astro/Pictures/allphotos/20200604 Nyack Beach State Park&quot; NEF"
-            isEnabled = "NO">
+            argument = "&quot;/Users/astro/Downloads/Test_gps4camera2&quot; JPG"
+            isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
       <EnvironmentVariables>

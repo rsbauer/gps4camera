@@ -11,9 +11,12 @@ import Foundation
 
 public class ImageProcessor {
     private let dateFormatForQR = DateFormatter()
+    private let dateFormats = [
+        "yyyy-MM-dd'T'HH:mm:ss.SS",
+        "yyyy-MM-dd'T'HH:mm:ss"
+    ]
     
     public init() {
-        self.dateFormatForQR.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SS"
     }
     
     public func diskImage(from named: URL) -> CGImage? {
@@ -61,11 +64,11 @@ public class ImageProcessor {
         }
 
         guard let metaData = readExif(from: name),
-            let createDate = metaData["DateCreated"] as? String,
+            let createDate = findCreateDate(metaData),
             let cameraDate = parseStringToDate(createDate) else {
             return nil
         }
-        
+
         var incrementDirection = "-"
         if qrDate > cameraDate {
             incrementDirection = "+"
@@ -93,9 +96,27 @@ public class ImageProcessor {
     }
 }
 
-
 extension ImageProcessor {
     private func parseStringToDate(_ string: String) -> Date? {
-        return dateFormatForQR.date(from: string)
+        for format in dateFormats {
+            dateFormatForQR.dateFormat = format
+
+            if let foundDate = dateFormatForQR.date(from: string) {
+                return foundDate
+            }
+        }
+        
+        return nil
+    }
+    
+    private func findCreateDate(_ metaData: Dictionary<String, Any>) -> String? {
+        let keys = ["DateCreate", "DateCreated"]
+        for key in keys {
+            if let found = metaData[key] as? String {
+                return found
+            }
+        }
+
+        return nil
     }
 }
