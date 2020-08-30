@@ -16,7 +16,7 @@ public final class GeoTag {
     public func using(_ mapPaths: [URL]) {
         for path in mapPaths {
 //            print("Executing: " + "\(Constants.exifCommand)\"\(path.absoluteURL)\" ./")
-            Shell.shell("\(Constants.exifCommand)\"\(path.absoluteURL)\" ./")
+            Shell.shell("\(Constants.exifCommand)\"\(path.path)\" ./")
         }
     }
 }
