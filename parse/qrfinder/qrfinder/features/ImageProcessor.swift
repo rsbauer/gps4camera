@@ -92,7 +92,9 @@ public class ImageProcessor {
     }
     
     public func adjustDates(using qrImage: QRImage, for path: URL) {
-        Shell.shell("\(qrImage.exifCommand) \(path.absoluteURL)")
+        let command = "\(qrImage.exifCommand) \"\(path.path)\""
+//        print("Adjust date: \(command)")
+        Shell.shell(command)
     }
 }
 
