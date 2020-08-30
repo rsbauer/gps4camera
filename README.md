@@ -25,6 +25,30 @@ GPS View | QR Code | Map View
 --- | --- | ---
 <img src="https://raw.githubusercontent.com/rsbauer/gps4camera/master/images/gps.png" width="300"> | <img src="https://raw.githubusercontent.com/rsbauer/gps4camera/master/images/qr.png" width="300"> | <img src="https://raw.githubusercontent.com/rsbauer/gps4camera/master/images/map.png" width="300">
 
+### Usage
+
+## qrfinder
+
+
+The latest version can be found here: https://github.com/rsbauer/gps4camera/releases/ and look for the zip file with "qrfinder" in the name.  
+
+You can put this in the same directory as the photos you wish to update.  Although it may be better to put it in /usr/local/bin so it'll be available from any directory.
+
+qrfinder will need exiftool.  Exiftool can be found and installed from https://exiftool.org/
+
+Once qrfinder and exiftool have been installed, you would run something like this:
+
+qrfinder [directory of the files you'd like to update] [image extension to search]
+
+or something like this:
+
+qrfinder /Users/rob/Pictures/today JPG
+
+(replace the directory and file extension with ones you use) 
+
+Make sure you have either a gpx or kml file with the gps coordinates in the same directory.  Otherwise, the script will not make any changes.
+
+
 ### Getting Started
 
 You will need the source code from here and the latest Xcode installed.  
