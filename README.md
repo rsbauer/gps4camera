@@ -38,11 +38,11 @@ qrfinder will need exiftool.  Exiftool can be found and installed from https://e
 
 Once qrfinder and exiftool have been installed, you would run something like this:
 
-qrfinder [directory of the files you'd like to update] [image extension to search]
+`qrfinder [directory of the files you'd like to update] [image extension to search]`
 
 or something like this:
 
-qrfinder /Users/rob/Pictures/today JPG
+`qrfinder /Users/rob/Pictures/today JPG`
 
 (replace the directory and file extension with ones you use) 
 
