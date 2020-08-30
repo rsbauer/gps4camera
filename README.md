@@ -27,7 +27,7 @@ GPS View | QR Code | Map View
 
 ### Usage
 
-## qrfinder
+#### qrfinder
 
 
 The latest version can be found here: https://github.com/rsbauer/gps4camera/releases/ and look for the zip file with "qrfinder" in the name.  
