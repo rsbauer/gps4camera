@@ -2,24 +2,22 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>StringsTable</key>
-	<string>Root</string>
 	<key>PreferenceSpecifiers</key>
 	<array>
 		<dict>
-			<key>Type</key>
-			<string>PSMultiValueSpecifier</string>
-			<key>Title</key>
-			<string>Speed Units</string>
-			<key>Key</key>
-			<string>speed_units</string>
 			<key>DefaultValue</key>
 			<string>mph</string>
+			<key>Key</key>
+			<string>speed_units</string>
+			<key>Title</key>
+			<string>Speed Units</string>
 			<key>Titles</key>
 			<array>
 				<string>mph</string>
 				<string>km/h</string>
 			</array>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
 			<key>Values</key>
 			<array>
 				<string>mph</string>
@@ -27,19 +25,19 @@
 			</array>
 		</dict>
 		<dict>
-			<key>Type</key>
-			<string>PSMultiValueSpecifier</string>
-			<key>Title</key>
-			<string>Temperature Units</string>
-			<key>Key</key>
-			<string>temperature_units</string>
 			<key>DefaultValue</key>
 			<string>Fahrenheit</string>
+			<key>Key</key>
+			<string>temperature_units</string>
+			<key>Title</key>
+			<string>Temperature Units</string>
 			<key>Titles</key>
 			<array>
 				<string>Fahrenheit</string>
 				<string>Celsius</string>
 			</array>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
 			<key>Values</key>
 			<array>
 				<string>Fahrenheit</string>
@@ -47,19 +45,19 @@
 			</array>
 		</dict>
 		<dict>
-			<key>Type</key>
-			<string>PSMultiValueSpecifier</string>
-			<key>Title</key>
-			<string>Clock</string>
-			<key>Key</key>
-			<string>clock_format</string>
 			<key>DefaultValue</key>
 			<string>12</string>
+			<key>Key</key>
+			<string>clock_format</string>
+			<key>Title</key>
+			<string>Clock</string>
 			<key>Titles</key>
 			<array>
 				<string>12 hour</string>
 				<string>24 hour</string>
 			</array>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
 			<key>Values</key>
 			<array>
 				<string>12</string>
@@ -67,14 +65,16 @@
 			</array>
 		</dict>
 		<dict>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
 			<key>Title</key>
 			<string>Information</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
 		</dict>
 		<dict>
 			<key>File</key>
 			<string>settings_howto.html</string>
+			<key>IASKChildTitle</key>
+			<string></string>
 			<key>IASKViewControllerClass</key>
 			<string>IASKAppSettingsWebViewController</string>
 			<key>IASKViewControllerSelector</key>
@@ -83,12 +83,12 @@
 			<string>How to</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
-			<key>IASKChildTitle</key>
-			<string></string>
 		</dict>
 		<dict>
 			<key>File</key>
 			<string>settings_about.html</string>
+			<key>IASKChildTitle</key>
+			<string></string>
 			<key>IASKViewControllerClass</key>
 			<string>IASKAppSettingsWebViewController</string>
 			<key>IASKViewControllerSelector</key>
@@ -97,19 +97,19 @@
 			<string>About</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
-			<key>IASKChildTitle</key>
-			<string></string>
 		</dict>
-        <dict>
-            <key>DefaultValue</key>
-            <string>Version</string>
-            <key>Key</key>
-            <string>Version</string>
-            <key>Title</key>
-            <string>Version</string>
-            <key>Type</key>
-            <string>PSTitleValueSpecifier</string>
-        </dict>
+		<dict>
+			<key>DefaultValue</key>
+			<string>2.0.54</string>
+			<key>Key</key>
+			<string>Version</string>
+			<key>Title</key>
+			<string>Version</string>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+		</dict>
 	</array>
+	<key>StringsTable</key>
+	<string>Root</string>
 </dict>
 </plist>
