@@ -735,7 +735,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# increment build number\nif [ $ENABLE_PREVIEWS == \"NO\" ]\nthen\n    infoPath=\"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n    echo \"infoPath:\"\n    echo $infoPath\n    buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${infoPath}\")\n    buildNumber=$(($buildNumber + 1))\n    /usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${infoPath}\"\nelse\n    echo \"Skipping the script because of preview mode\"\nfi\n";
+			shellScript = "# increment build number\nif [ $ENABLE_PREVIEWS == \"NO\" ]\nthen\n    infoPath=\"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n    settingsPath=\"${TARGET_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/Settings.bundle/Root.plist\"\n    buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${infoPath}\")\n    buildNumber=$(($buildNumber + 1))\n    /usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${infoPath}\"\n    /usr/libexec/PlistBuddy -c \"Set PreferenceSpecifiers:6:DefaultValue ${MARKETING_VERSION}.$buildNumber\" \"${settingsPath}\"\nelse\n    echo \"Skipping the script because of preview mode\"\nfi\n";
 		};
 		7533760C2F018C1183380691 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

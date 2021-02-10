@@ -66,14 +66,12 @@
 				<string>24</string>
 			</array>
 		</dict>
-        
-        <dict>
-            <key>Type</key>
-            <string>PSGroupSpecifier</string>
-            <key>Title</key>
-            <string>Information</string>
-        </dict>
-
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Information</string>
+		</dict>
 		<dict>
 			<key>File</key>
 			<string>settings_howto.html</string>
@@ -102,6 +100,16 @@
 			<key>IASKChildTitle</key>
 			<string></string>
 		</dict>
+        <dict>
+            <key>DefaultValue</key>
+            <string>Version</string>
+            <key>Key</key>
+            <string>Version</string>
+            <key>Title</key>
+            <string>Version</string>
+            <key>Type</key>
+            <string>PSTitleValueSpecifier</string>
+        </dict>
 	</array>
 </dict>
 </plist>
