@@ -52,7 +52,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "&quot;/Users/astro/Downloads/test2&quot; DNG"
+            argument = "&quot;/Users/astro/Pictures/allphotos/gps2photo_ex/camera&quot; NEF"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

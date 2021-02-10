@@ -214,7 +214,7 @@ extension Subject {
 
     @available(*, deprecated, renamed: "receive(event:)")
     open func send(_ event: Event<Element, Error>) {
-        receive(event: event)
+        on(event)
     }
 }
 
@@ -465,4 +465,3 @@ extension SignalProtocol {
         return sink(receiveCompletion: { _ in }, receiveValue: receiveValue)
     }
 }
-

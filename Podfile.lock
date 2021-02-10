@@ -6,7 +6,7 @@ PODS:
   - FontAwesome.swift (1.8.2)
   - InAppSettingsKit (2.14)
   - PluggableAppDelegate (1.3.0)
-  - ReactiveKit (3.14.0)
+  - ReactiveKit (3.17.4)
   - Swinject (2.7.1)
 
 DEPENDENCIES:
@@ -24,8 +24,9 @@ SPEC REPOS:
     - FontAwesome.swift
     - InAppSettingsKit
     - PluggableAppDelegate
-    - ReactiveKit
     - Swinject
+  trunk:
+    - ReactiveKit
 
 SPEC CHECKSUMS:
   Bond: 5d626bfbbfc60b213ec35badb8f4fd81beff6a5f
@@ -33,9 +34,9 @@ SPEC CHECKSUMS:
   FontAwesome.swift: 7938d6a03113ff3f39001bde7f50be8a0903d605
   InAppSettingsKit: 800853da39388780c15191846688c0974c5b13b5
   PluggableAppDelegate: 94c85bf821d85661c843a86e1aafe0cc12a62634
-  ReactiveKit: bee31957333d98c5b443609fe099ebccdf055d15
+  ReactiveKit: f9f9e079efa39312c597bf1508ef4810d111ce76
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
 
 PODFILE CHECKSUM: a1be58a1a9bf7755f8b10159bcf8055df17ff93d
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0

@@ -115,3 +115,48 @@ extension SignalProtocol where Error == Never {
         return sink(receiveCompletion: { _ in }, receiveValue: receiveValue)
     }
 }
+
+extension SignalProtocol where Error == Never {
+
+    /// Assigns each element from a signal to a property on an object.
+    ///
+    /// - note: The object will be retained as long as the returned cancellable is retained.
+    public func assign<Root>(to keyPath: ReferenceWritableKeyPath<Root, Element>, on object: Root) -> AnyCancellable {
+        return sink(receiveValue: { object[keyPath: keyPath] = $0 })
+    }
+}
+
+extension SignalProtocol {
+
+    public func subscribe<Downstream: Subscriber>(_ subscriber: Downstream) where Downstream.Input == Element, Downstream.Failure == Error {
+        let disposable = CompositeDisposable()
+        let subscription = DisposableSubscription(disposable: disposable)
+        subscriber.receive(subscription: subscription)
+        disposable += observe { event in
+            switch event {
+            case .next(let element):
+                _ = subscriber.receive(element)
+            case .failed(let error):
+                subscriber.receive(completion: .failure(error))
+            case .completed:
+                subscriber.receive(completion: .finished)
+            }
+        }
+    }
+}
+
+private class DisposableSubscription: Subscription {
+
+    let disposable: Disposable
+
+    init(disposable: Disposable) {
+        self.disposable = disposable
+    }
+
+    func request(_ demand: Subscribers.Demand) {
+    }
+
+    func cancel() {
+        disposable.dispose()
+    }
+}

@@ -22,26 +22,50 @@
 Press the record button to enable GPS recording.  Press the stop button to stop recording.
 </p>
 <p>
-At any time, the recorded tracks can be exported from the Files tab.  Either by swipping left and tapping Share or tap the file and then tap on Share.  Files can be shared using any sharing method available to your device such as email or text message.
+At any time, the recorded tracks can be exported from the Files tab.  Either by swipping left and tapping Share or tap the file and then tap on Share.
+</p>
+<p>
+Files can be shared using any sharing method available to your device such as email or text message.
 </p>
 
-<p><b>For using the app to record tracks for geo tagging</b></p>
-<p>
-Follow the steps above to record and export tracks.
-</p>
-<p>
-At some point during GPS track recording, before, or after, tap on Sync.  Then use the camera you plan to geo tag photos from to take a picture of the Sync tab.  It's recommended to select a shutter speed quick enough to keep the QR code sharp, otherwise the QR decoding step will fail.
-</p>
-<p>
-Collect the images and track file into the same directory on a Mac (PC support not yet available).
-</p>
-<p><b>Exiftool</b> MUST be installed before running <b>qrfinder</b>.  To install <a href="https://exiftool.org/install.html#OSX"><b>exiftool</b> on Mac<a/>.
-<p>
-Run <b>qrfinder "[path to images]"</b>
-</p>
-<p>
-If all goes well, <b>qrfinder</b> will locate the QR coded image, extract the date, then using <b>exiftool</b>, apply the date correct to all images in the directory.  Then it will use <b>exiftool</b> to geo tag the images in the directory, as long as a .gps or .kml file can be found.
-</p>
+<h1>Geotagging Photos</h1>
+
+<p>The following steps work if you have a Mac computer. PC and Linux are not yet supported (sorry!).</p>
+
+<p><b>Requirements</b></p>
+
+<ul>
+    <li>Mac computer</li>
+    <li>ExifTool installed, <a href="https://exiftool.org/install.html">https://exiftool.org/install.html</a></li>
+    <li>gps2photos installed, <a href="https://github.com/rsbauer/gps2photos/releases/">https://github.com/rsbauer/gps2photos/releases/</a></li>
+    <li>Backup of the photos BEFORE running gps2photos is highly recommended</li>
+</ul>
+
+<p>1. Before taking photos, start gps4camera app and press start on the GPS tab.  gps4camera is now recording your tracks.</p>
+
+<p>2. In gps4camera, select the Sync tab (this can be done at anytime, even while recording tracks).  The Sync tab will show the current date and time and a changing QR code.</p>
+
+<p>3. Using the camera you wish to geotag photos with, take a photo of the Sync tab. It is important that the QR code is legible and sharp. The phone screen should fill the camera's view finder as much as possible while still in focus.  Use a high enough shutter speed and ISO to ensure there's no motion blur from the changing QR code or from hand holding the camera.</p>
+
+<p>4. Keep gps4camera recording and go about taking photos</p>
+
+<p><b>When done taking photos</b></p>
+
+<p>1. Stop gps4camera's GPS recording by tapping the stop button</p>
+<p>2. Tap the Files tab and locate the date and time of your recent session (should be at the top)</p>
+<p>3. Tap the session or swipe it to the left then tap Share</p>
+<p>4. From Share, tap GPX</p>
+<p>5. Tap a share option. I find email or AirDrop work nicely, but any other method you can access from your computer will do too.</p>
+<p>6. Send</p>
+<p>7. Load the photos from the camera to the computer. Make sure one of the photos is also the photo with the QR code.</p>
+<p>8. Copy the gpx file from step 5 to the folder/directory the photos were copied to</p>
+<p>9. It is highly recommended to make a backup of the photos in case the gps2photos results are not to your liking</p>
+<p>10. Start gps2photos</p>
+<p>11. Drag the photos and the gpx file to gps2photos (or click the + button to add the folder or photos)</p>
+<p>12. If gps2photos detects the gpx file and exiftool, the Geotag Images button will be enabled. Click the Geotag Images button</p>
+<p>13. Photos will now be geotagged</p>
+
+<p>Do <b>NOT</b> click "Geotag Images" buton more than once on the same photos.  Running it a second time will increment/decrement the photos' date and time further from the previous run.  This will incorrectly set the date and time and geotagging will be incorrect.</p>
 
 </body>
 </html>
